@@ -1,0 +1,111 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.bayes.BayesNet -D -Q weka.classifiers.bayes.net.search.local.K2 -- -P 1 -S BAYES -E weka.classifiers.bayes.net.estimate.SimpleEstimator -- -A 0.5
+Relation:     covid19-train
+Instances:    10959
+Attributes:   15
+              USMER
+              SEX
+              PATIENT_TYPE
+              PNEUMONIA
+              AGE
+              PREGNANT
+              DIABETES
+              COPD
+              ASTHMA
+              INMSUPR
+              HIPERTENSION
+              CARDIOVASCULAR
+              OBESITY
+              TOBACCO
+              DEATH
+Test mode:    evaluate on training data
+
+=== Classifier model (full training set) ===
+
+Bayes Network Classifier
+not using ADTree
+#attributes=15 #classindex=14
+Network structure (nodes followed by parents)
+USMER(1): DEATH 
+SEX(2): DEATH 
+PATIENT_TYPE(2): DEATH 
+PNEUMONIA(2): DEATH 
+AGE(2): DEATH 
+PREGNANT(2): DEATH 
+DIABETES(2): DEATH 
+COPD(2): DEATH 
+ASTHMA(1): DEATH 
+INMSUPR(2): DEATH 
+HIPERTENSION(2): DEATH 
+CARDIOVASCULAR(2): DEATH 
+OBESITY(2): DEATH 
+TOBACCO(2): DEATH 
+DEATH(2): 
+LogScore Bayes: -51388.37586370579
+LogScore BDeu: -51408.99066900071
+LogScore MDL: -51424.950426407864
+LogScore ENTROPY: -51308.67647246458
+LogScore AIC: -51333.67647246458
+
+
+Time taken to build model: 0.27 seconds
+
+=== Evaluation on training set ===
+
+Time taken to test model on training data: 0.12 seconds
+
+=== Summary ===
+
+Correctly Classified Instances        9748               88.9497 %
+Incorrectly Classified Instances      1211               11.0503 %
+Kappa statistic                          0.7355
+Mean absolute error                      0.1268
+Root mean squared error                  0.2919
+Relative absolute error                 31.3443 %
+Root relative squared error             64.8853 %
+Total Number of Instances            10959     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.902    0.143    0.942      0.902    0.921      0.737    0.946     0.979     No
+                 0.857    0.098    0.775      0.857    0.814      0.737    0.946     0.819     Yes
+Weighted Avg.    0.889    0.130    0.895      0.889    0.891      0.737    0.946     0.934     
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 7102  770 |    a = No
+  441 2646 |    b = Yes
+
+
+=== Re-evaluation on test set ===
+
+User supplied test set
+Relation:     covid19-test
+Instances:     unknown (yet). Reading incrementally
+Attributes:   15
+
+=== Summary ===
+
+Correctly Classified Instances        2431               88.7226 %
+Incorrectly Classified Instances       309               11.2774 %
+Kappa statistic                          0.7299
+Mean absolute error                      0.1263
+Root mean squared error                  0.2927
+Total Number of Instances             2740     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.898    0.141    0.943      0.898    0.920      0.732    0.948     0.981     No
+                 0.859    0.102    0.766      0.859    0.810      0.732    0.948     0.816     Yes
+Weighted Avg.    0.887    0.130    0.893      0.887    0.889      0.732    0.948     0.935     
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 1774  201 |    a = No
+  108  657 |    b = Yes
+

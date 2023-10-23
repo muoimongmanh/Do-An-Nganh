@@ -1,0 +1,136 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.J48 -C 0.25 -M 2
+Relation:     covid19-train
+Instances:    10959
+Attributes:   15
+              USMER
+              SEX
+              PATIENT_TYPE
+              PNEUMONIA
+              AGE
+              PREGNANT
+              DIABETES
+              COPD
+              ASTHMA
+              INMSUPR
+              HIPERTENSION
+              CARDIOVASCULAR
+              OBESITY
+              TOBACCO
+              DEATH
+Test mode:    evaluate on training data
+
+=== Classifier model (full training set) ===
+
+J48 pruned tree
+------------------
+
+PATIENT_TYPE <= 1
+|   COPD <= 1
+|   |   CARDIOVASCULAR <= 1
+|   |   |   AGE <= 0.5: No (4.0)
+|   |   |   AGE > 0.5: Yes (10.0/2.0)
+|   |   CARDIOVASCULAR > 1: No (49.0/9.0)
+|   COPD > 1
+|   |   PNEUMONIA <= 1
+|   |   |   OBESITY <= 1
+|   |   |   |   AGE <= 0.5: No (39.0/7.0)
+|   |   |   |   AGE > 0.5
+|   |   |   |   |   INMSUPR <= 1: No (2.0)
+|   |   |   |   |   INMSUPR > 1
+|   |   |   |   |   |   TOBACCO <= 1: Yes (5.0)
+|   |   |   |   |   |   TOBACCO > 1
+|   |   |   |   |   |   |   DIABETES <= 1
+|   |   |   |   |   |   |   |   USMER <= 1: Yes (5.0/2.0)
+|   |   |   |   |   |   |   |   USMER > 1
+|   |   |   |   |   |   |   |   |   CARDIOVASCULAR <= 1: Yes (3.0/1.0)
+|   |   |   |   |   |   |   |   |   CARDIOVASCULAR > 1: No (5.0)
+|   |   |   |   |   |   |   DIABETES > 1: Yes (8.0/1.0)
+|   |   |   OBESITY > 1: No (378.0/39.0)
+|   |   PNEUMONIA > 1: No (6629.0/110.0)
+PATIENT_TYPE > 1
+|   AGE <= 0.5
+|   |   AGE <= 0
+|   |   |   USMER <= 1: No (123.89/25.16)
+|   |   |   USMER > 1: Yes (31.49/12.28)
+|   |   AGE > 0
+|   |   |   INMSUPR <= 1: Yes (89.55/13.78)
+|   |   |   INMSUPR > 1
+|   |   |   |   HIPERTENSION <= 1: Yes (354.0/72.0)
+|   |   |   |   HIPERTENSION > 1
+|   |   |   |   |   SEX <= 1
+|   |   |   |   |   |   DIABETES <= 1
+|   |   |   |   |   |   |   PREGNANT <= 1: No (2.0)
+|   |   |   |   |   |   |   PREGNANT > 1: Yes (62.0/15.0)
+|   |   |   |   |   |   DIABETES > 1
+|   |   |   |   |   |   |   OBESITY <= 1: Yes (52.0/16.0)
+|   |   |   |   |   |   |   OBESITY > 1: No (237.66/103.39)
+|   |   |   |   |   SEX > 1: Yes (687.99/228.66)
+|   AGE > 0.5: Yes (2181.41/332.27)
+
+Number of Leaves  : 	22
+
+Size of the tree : 	43
+
+
+Time taken to build model: 0.37 seconds
+
+=== Evaluation on training set ===
+
+Time taken to test model on training data: 0.09 seconds
+
+=== Summary ===
+
+Correctly Classified Instances        9965               90.9298 %
+Incorrectly Classified Instances       994                9.0702 %
+Kappa statistic                          0.7845
+Mean absolute error                      0.1409
+Root mean squared error                  0.2653
+Relative absolute error                 34.8281 %
+Root relative squared error             58.9831 %
+Total Number of Instances            10959     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.911    0.095    0.961      0.911    0.935      0.788    0.942     0.968     No
+                 0.905    0.089    0.799      0.905    0.849      0.788    0.942     0.818     Yes
+Weighted Avg.    0.909    0.093    0.915      0.909    0.911      0.788    0.942     0.926     
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 7171  701 |    a = No
+  293 2794 |    b = Yes
+
+
+=== Re-evaluation on test set ===
+
+User supplied test set
+Relation:     covid19-test
+Instances:     unknown (yet). Reading incrementally
+Attributes:   15
+
+=== Summary ===
+
+Correctly Classified Instances        2499               91.2044 %
+Incorrectly Classified Instances       241                8.7956 %
+Kappa statistic                          0.7914
+Mean absolute error                      0.141 
+Root mean squared error                  0.2667
+Total Number of Instances             2740     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.909    0.080    0.967      0.909    0.937      0.796    0.938     0.966     No
+                 0.920    0.091    0.796      0.920    0.854      0.796    0.938     0.812     Yes
+Weighted Avg.    0.912    0.083    0.919      0.912    0.914      0.796    0.938     0.923     
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 1795  180 |    a = No
+   61  704 |    b = Yes
+

@@ -1,0 +1,91 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.RandomForest -P 100 -I 100 -num-slots 1 -K 0 -M 1.0 -V 0.001 -S 1
+Relation:     covid19-train
+Instances:    10959
+Attributes:   15
+              USMER
+              SEX
+              PATIENT_TYPE
+              PNEUMONIA
+              AGE
+              PREGNANT
+              DIABETES
+              COPD
+              ASTHMA
+              INMSUPR
+              HIPERTENSION
+              CARDIOVASCULAR
+              OBESITY
+              TOBACCO
+              DEATH
+Test mode:    evaluate on training data
+
+=== Classifier model (full training set) ===
+
+RandomForest
+
+Bagging with 100 iterations and base learner
+
+weka.classifiers.trees.RandomTree -K 0 -M 1.0 -V 0.001 -S 1 -do-not-check-capabilities
+
+Time taken to build model: 2.96 seconds
+
+=== Evaluation on training set ===
+
+Time taken to test model on training data: 0.47 seconds
+
+=== Summary ===
+
+Correctly Classified Instances       10061               91.8058 %
+Incorrectly Classified Instances       898                8.1942 %
+Kappa statistic                          0.8039
+Mean absolute error                      0.1197
+Root mean squared error                  0.2413
+Relative absolute error                 29.5689 %
+Root relative squared error             53.651  %
+Total Number of Instances            10959     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.922    0.092    0.962      0.922    0.942      0.806    0.972     0.989     No
+                 0.908    0.078    0.820      0.908    0.862      0.806    0.972     0.925     Yes
+Weighted Avg.    0.918    0.088    0.922      0.918    0.919      0.806    0.972     0.971     
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 7258  614 |    a = No
+  284 2803 |    b = Yes
+
+
+=== Re-evaluation on test set ===
+
+User supplied test set
+Relation:     covid19-test
+Instances:     unknown (yet). Reading incrementally
+Attributes:   15
+
+=== Summary ===
+
+Correctly Classified Instances        2480               90.5109 %
+Incorrectly Classified Instances       260                9.4891 %
+Kappa statistic                          0.7733
+Mean absolute error                      0.1361
+Root mean squared error                  0.2698
+Total Number of Instances             2740     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.909    0.105    0.957      0.909    0.932      0.776    0.950     0.977     No
+                 0.895    0.091    0.792      0.895    0.840      0.776    0.950     0.839     Yes
+Weighted Avg.    0.905    0.101    0.911      0.905    0.907      0.776    0.950     0.939     
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 1795  180 |    a = No
+   80  685 |    b = Yes
+

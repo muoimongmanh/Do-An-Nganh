@@ -1,0 +1,140 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.REPTree -M 2 -V 0.001 -N 3 -S 1 -L -1 -I 0.0
+Relation:     covid19-train
+Instances:    10959
+Attributes:   15
+              USMER
+              SEX
+              PATIENT_TYPE
+              PNEUMONIA
+              AGE
+              PREGNANT
+              DIABETES
+              COPD
+              ASTHMA
+              INMSUPR
+              HIPERTENSION
+              CARDIOVASCULAR
+              OBESITY
+              TOBACCO
+              DEATH
+Test mode:    evaluate on training data
+
+=== Classifier model (full training set) ===
+
+
+REPTree
+============
+
+PATIENT_TYPE < 1.5
+|   AGE < 0.75 : No (3901.51/44.82) [2006.4/29]
+|   AGE >= 0.75
+|   |   PNEUMONIA < 1.5
+|   |   |   OBESITY < 1.5
+|   |   |   |   DIABETES < 1.5 : No (10/4) [9/4]
+|   |   |   |   DIABETES >= 1.5 : Yes (9/1) [1/0]
+|   |   |   OBESITY >= 1.5 : No (83.18/16) [32/5]
+|   |   PNEUMONIA >= 1.5
+|   |   |   COPD < 1.5
+|   |   |   |   CARDIOVASCULAR < 1.5 : Yes (7/1) [2/0]
+|   |   |   |   CARDIOVASCULAR >= 1.5 : No (12/3) [6.18/1]
+|   |   |   COPD >= 1.5 : No (723.31/44.18) [334.42/22]
+PATIENT_TYPE >= 1.5
+|   AGE < 0.75
+|   |   AGE < 0.25
+|   |   |   USMER < 1.5 : No (77.52/15.12) [46.36/10.04]
+|   |   |   USMER >= 1.5 : Yes (24.32/9.24) [7.16/3.04]
+|   |   AGE >= 0.25
+|   |   |   SEX < 1.5
+|   |   |   |   DIABETES < 1.5 : Yes (100/25) [51/13]
+|   |   |   |   DIABETES >= 1.5
+|   |   |   |   |   OBESITY < 1.5 : Yes (55/15) [25/8]
+|   |   |   |   |   OBESITY >= 1.5
+|   |   |   |   |   |   INMSUPR < 1.5 : Yes (12.39/2) [5.78/0.78]
+|   |   |   |   |   |   INMSUPR >= 1.5
+|   |   |   |   |   |   |   ASTHMA < 1.5 : Yes (4/0) [5/3]
+|   |   |   |   |   |   |   ASTHMA >= 1.5
+|   |   |   |   |   |   |   |   PREGNANT < 1.5 : No (5/0) [1/0]
+|   |   |   |   |   |   |   |   PREGNANT >= 1.5
+|   |   |   |   |   |   |   |   |   HIPERTENSION < 1.5 : Yes (25/10) [8/1]
+|   |   |   |   |   |   |   |   |   HIPERTENSION >= 1.5 : No (170.91/72.39) [56.78/28]
+|   |   |   SEX >= 1.5
+|   |   |   |   HIPERTENSION < 1.5 : Yes (170/30) [75/9]
+|   |   |   |   HIPERTENSION >= 1.5
+|   |   |   |   |   INMSUPR < 1.5 : Yes (19.39/2) [8/1]
+|   |   |   |   |   INMSUPR >= 1.5
+|   |   |   |   |   |   COPD < 1.5 : Yes (5/0) [6/0]
+|   |   |   |   |   |   COPD >= 1.5
+|   |   |   |   |   |   |   PNEUMONIA < 1.5
+|   |   |   |   |   |   |   |   ASTHMA < 1.5 : Yes (4/0) [2/2]
+|   |   |   |   |   |   |   |   ASTHMA >= 1.5
+|   |   |   |   |   |   |   |   |   TOBACCO < 1.5
+|   |   |   |   |   |   |   |   |   |   OBESITY < 1.5 : No (14/5) [3/0]
+|   |   |   |   |   |   |   |   |   |   OBESITY >= 1.5 : Yes (21/4) [14/3]
+|   |   |   |   |   |   |   |   |   TOBACCO >= 1.5 : Yes (243.17/71.78) [135.17/44.39]
+|   |   |   |   |   |   |   PNEUMONIA >= 1.5 : Yes (153.35/60.96) [87.35/30.57]
+|   AGE >= 0.75 : Yes (1455.94/223.1) [725.39/109.12]
+
+Size of the tree : 49
+
+Time taken to build model: 0.28 seconds
+
+=== Evaluation on training set ===
+
+Time taken to test model on training data: 0 seconds
+
+=== Summary ===
+
+Correctly Classified Instances        9968               90.9572 %
+Incorrectly Classified Instances       991                9.0428 %
+Kappa statistic                          0.7847
+Mean absolute error                      0.1399
+Root mean squared error                  0.2643
+Relative absolute error                 34.5701 %
+Root relative squared error             58.7625 %
+Total Number of Instances            10959     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.913    0.098    0.960      0.913    0.935      0.787    0.946     0.971     No
+                 0.902    0.087    0.802      0.902    0.849      0.787    0.946     0.826     Yes
+Weighted Avg.    0.910    0.095    0.915      0.910    0.911      0.787    0.946     0.930     
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 7184  688 |    a = No
+  303 2784 |    b = Yes
+
+
+=== Re-evaluation on test set ===
+
+User supplied test set
+Relation:     covid19-test
+Instances:     unknown (yet). Reading incrementally
+Attributes:   15
+
+=== Summary ===
+
+Correctly Classified Instances        2498               91.1679 %
+Incorrectly Classified Instances       242                8.8321 %
+Kappa statistic                          0.7903
+Mean absolute error                      0.139 
+Root mean squared error                  0.2648
+Total Number of Instances             2740     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.909    0.082    0.966      0.909    0.937      0.794    0.950     0.976     No
+                 0.918    0.091    0.797      0.918    0.853      0.794    0.950     0.821     Yes
+Weighted Avg.    0.912    0.085    0.919      0.912    0.913      0.794    0.950     0.933     
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 1796  179 |    a = No
+   63  702 |    b = Yes
+

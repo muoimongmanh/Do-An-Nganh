@@ -1,0 +1,97 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.bayes.NaiveBayesMultinomialText -P 0 -M 3.0 -norm 1.0 -lnorm 2.0 -stopwords-handler weka.core.stopwords.Null -tokenizer "weka.core.tokenizers.WordTokenizer -delimiters \" \\r\\n\\t.,;:\\\'\\\"()?!\"" -stemmer weka.core.stemmers.NullStemmer
+Relation:     covid19-train
+Instances:    10959
+Attributes:   15
+              USMER
+              SEX
+              PATIENT_TYPE
+              PNEUMONIA
+              AGE
+              PREGNANT
+              DIABETES
+              COPD
+              ASTHMA
+              INMSUPR
+              HIPERTENSION
+              CARDIOVASCULAR
+              OBESITY
+              TOBACCO
+              DEATH
+Test mode:    evaluate on training data
+
+=== Classifier model (full training set) ===
+
+Dictionary size: 0
+
+The independent frequency of a class
+--------------------------------------
+No	7873.0
+Yes	3088.0
+
+The frequency of a word given the class
+-----------------------------------------
+         No	        Yes	
+
+
+Time taken to build model: 0.01 seconds
+
+=== Evaluation on training set ===
+
+Time taken to test model on training data: 0.02 seconds
+
+=== Summary ===
+
+Correctly Classified Instances        7872               71.8314 %
+Incorrectly Classified Instances      3087               28.1686 %
+Kappa statistic                          0     
+Mean absolute error                      0.4047
+Root mean squared error                  0.4498
+Relative absolute error                100      %
+Root relative squared error            100      %
+Total Number of Instances            10959     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1.000    1.000    0.718      1.000    0.836      ?        0.500     0.718     No
+                 0.000    0.000    ?          0.000    ?          ?        0.500     0.282     Yes
+Weighted Avg.    0.718    0.718    ?          0.718    ?          ?        0.500     0.595     
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 7872    0 |    a = No
+ 3087    0 |    b = Yes
+
+
+=== Re-evaluation on test set ===
+
+User supplied test set
+Relation:     covid19-test
+Instances:     unknown (yet). Reading incrementally
+Attributes:   15
+
+=== Summary ===
+
+Correctly Classified Instances        1975               72.0803 %
+Incorrectly Classified Instances       765               27.9197 %
+Kappa statistic                          0     
+Mean absolute error                      0.4036
+Root mean squared error                  0.4486
+Total Number of Instances             2740     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 1.000    1.000    0.721      1.000    0.838      ?        0.500     0.721     No
+                 0.000    0.000    ?          0.000    ?          ?        0.500     0.279     Yes
+Weighted Avg.    0.721    0.721    ?          0.721    ?          ?        0.500     0.598     
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 1975    0 |    a = No
+  765    0 |    b = Yes
+

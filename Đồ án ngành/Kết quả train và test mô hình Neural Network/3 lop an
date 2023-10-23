@@ -1,0 +1,427 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.functions.MultilayerPerceptron -L 0.3 -M 0.2 -N 500 -V 0 -S 0 -E 20 -H "a, a, a" -R
+Relation:     covid19-train
+Instances:    10959
+Attributes:   15
+              USMER
+              SEX
+              PATIENT_TYPE
+              PNEUMONIA
+              AGE
+              PREGNANT
+              DIABETES
+              COPD
+              ASTHMA
+              INMSUPR
+              HIPERTENSION
+              CARDIOVASCULAR
+              OBESITY
+              TOBACCO
+              DEATH
+Test mode:    evaluate on training data
+
+=== Classifier model (full training set) ===
+
+Sigmoid Node 0
+    Inputs    Weights
+    Threshold    -1.8226647642374196
+    Node 18    1.032921690607525
+    Node 19    1.0525608382476055
+    Node 20    1.066041862041658
+    Node 21    1.0926902189776233
+    Node 22    1.0320459853581485
+    Node 23    1.0491511233760586
+    Node 24    1.0697627208200402
+    Node 25    1.0742128389457601
+Sigmoid Node 1
+    Inputs    Weights
+    Threshold    1.8228763518153597
+    Node 18    -1.0990620023640194
+    Node 19    -1.0377099215657692
+    Node 20    -1.0557065807940573
+    Node 21    -1.057472711564654
+    Node 22    -1.0676170829703175
+    Node 23    -1.057034013593519
+    Node 24    -1.0344150579102807
+    Node 25    -1.061333749094627
+Sigmoid Node 2
+    Inputs    Weights
+    Threshold    -3.1656053460250435
+    Attrib USMER    3.1760971735020487
+    Attrib SEX    -3.2645266353983984
+    Attrib PATIENT_TYPE    14.16215001863055
+    Attrib PNEUMONIA    -2.76608815045789
+    Attrib AGE    -6.009137270849355
+    Attrib PREGNANT    -1.0928331924535841
+    Attrib DIABETES    -5.153114164851034
+    Attrib COPD    2.4561021426016336
+    Attrib ASTHMA    4.639073174593077
+    Attrib INMSUPR    7.210195503711142
+    Attrib HIPERTENSION    -1.9908476068198864
+    Attrib CARDIOVASCULAR    7.180571129858581
+    Attrib OBESITY    -8.223366907990815
+    Attrib TOBACCO    -0.5747951226000293
+Sigmoid Node 3
+    Inputs    Weights
+    Threshold    1.8267298928917368
+    Attrib USMER    -1.0335884782281424
+    Attrib SEX    4.431931431797827
+    Attrib PATIENT_TYPE    7.260027200303014
+    Attrib PNEUMONIA    -6.617929897965912
+    Attrib AGE    12.323578442639572
+    Attrib PREGNANT    2.875302425318641
+    Attrib DIABETES    -3.345451687687895
+    Attrib COPD    2.3887583310102904
+    Attrib ASTHMA    4.3240332250379305
+    Attrib INMSUPR    -3.3183021535150576
+    Attrib HIPERTENSION    0.6007298678340176
+    Attrib CARDIOVASCULAR    -8.819963371205894
+    Attrib OBESITY    -8.810265237742083
+    Attrib TOBACCO    1.0184361844106637
+Sigmoid Node 4
+    Inputs    Weights
+    Threshold    -0.758493270569314
+    Attrib USMER    -6.510185616779371
+    Attrib SEX    4.645139889655207
+    Attrib PATIENT_TYPE    -2.4027611693386275
+    Attrib PNEUMONIA    -1.1205990127121386
+    Attrib AGE    -4.593064304379252
+    Attrib PREGNANT    -1.8562020646054826
+    Attrib DIABETES    -2.2400626648868385
+    Attrib COPD    -4.4839368534341775
+    Attrib ASTHMA    -2.038954453339743
+    Attrib INMSUPR    12.441494929925629
+    Attrib HIPERTENSION    -6.579893718111227
+    Attrib CARDIOVASCULAR    2.8343174686795956
+    Attrib OBESITY    12.85767998668917
+    Attrib TOBACCO    9.180540183546304
+Sigmoid Node 5
+    Inputs    Weights
+    Threshold    -5.05499062952405
+    Attrib USMER    -5.263229488147519
+    Attrib SEX    0.1567554009607787
+    Attrib PATIENT_TYPE    -5.4935156584503355
+    Attrib PNEUMONIA    3.3150520225681883
+    Attrib AGE    -12.8558462011209
+    Attrib PREGNANT    -11.190478370553526
+    Attrib DIABETES    3.182628630007468
+    Attrib COPD    5.874458319194106
+    Attrib ASTHMA    2.9728070301351
+    Attrib INMSUPR    2.6547961592166867
+    Attrib HIPERTENSION    0.18258374131482547
+    Attrib CARDIOVASCULAR    1.8637552886827438
+    Attrib OBESITY    -4.963314389505694
+    Attrib TOBACCO    1.0206608124123826
+Sigmoid Node 6
+    Inputs    Weights
+    Threshold    -1.8482591762576053
+    Attrib USMER    1.1434004036359942
+    Attrib SEX    -6.003213799385775
+    Attrib PATIENT_TYPE    -11.6906282668342
+    Attrib PNEUMONIA    4.394719141651015
+    Attrib AGE    -4.225823372026767
+    Attrib PREGNANT    -6.168965173785338
+    Attrib DIABETES    -2.4117812692386176
+    Attrib COPD    5.990691924255579
+    Attrib ASTHMA    -6.0301921867957144
+    Attrib INMSUPR    -4.3081183099819755
+    Attrib HIPERTENSION    -4.673570485376836
+    Attrib CARDIOVASCULAR    0.9460796862495444
+    Attrib OBESITY    -5.509089665983727
+    Attrib TOBACCO    0.7128779523070959
+Sigmoid Node 7
+    Inputs    Weights
+    Threshold    -2.5434527128268987
+    Attrib USMER    -0.8200701400434576
+    Attrib SEX    4.779981835826702
+    Attrib PATIENT_TYPE    10.886704624786052
+    Attrib PNEUMONIA    3.724334875982279
+    Attrib AGE    9.087058262206215
+    Attrib PREGNANT    -0.5603395556625888
+    Attrib DIABETES    7.323499364640377
+    Attrib COPD    -10.159279722068181
+    Attrib ASTHMA    4.397179587545375
+    Attrib INMSUPR    -3.037261873827625
+    Attrib HIPERTENSION    -9.723144793324959
+    Attrib CARDIOVASCULAR    -1.1258760863035226
+    Attrib OBESITY    -2.372719967414377
+    Attrib TOBACCO    4.55443592121667
+Sigmoid Node 8
+    Inputs    Weights
+    Threshold    -4.505515596789652
+    Attrib USMER    -2.9306989607410134
+    Attrib SEX    2.550965564244899
+    Attrib PATIENT_TYPE    14.60738600750206
+    Attrib PNEUMONIA    3.043645870209397
+    Attrib AGE    12.463770584407003
+    Attrib PREGNANT    -4.514576846288068
+    Attrib DIABETES    -9.167137589754839
+    Attrib COPD    -2.1439047405986726
+    Attrib ASTHMA    0.6119587089549222
+    Attrib INMSUPR    -6.022423348729273
+    Attrib HIPERTENSION    -2.793109614958528
+    Attrib CARDIOVASCULAR    -5.094995117970101
+    Attrib OBESITY    4.407425778312951
+    Attrib TOBACCO    1.3471281118978486
+Sigmoid Node 9
+    Inputs    Weights
+    Threshold    0.7077408403930475
+    Attrib USMER    5.333942163107002
+    Attrib SEX    1.5940990310020509
+    Attrib PATIENT_TYPE    8.314668981465735
+    Attrib PNEUMONIA    -2.3160048848100296
+    Attrib AGE    -1.777811624454242
+    Attrib PREGNANT    4.433982387669431
+    Attrib DIABETES    2.784361447427422
+    Attrib COPD    -11.189030189293046
+    Attrib ASTHMA    -4.397094218131119
+    Attrib INMSUPR    -2.4936028364279563
+    Attrib HIPERTENSION    -5.400496804747153
+    Attrib CARDIOVASCULAR    -2.876967810306339
+    Attrib OBESITY    -0.4935175309468912
+    Attrib TOBACCO    2.4763981836143913
+Sigmoid Node 10
+    Inputs    Weights
+    Threshold    -2.2001563146315086
+    Node 2    6.53788728145044
+    Node 3    6.7223142962882605
+    Node 4    -9.00919167960679
+    Node 5    -5.675761717749735
+    Node 6    -9.832092701455315
+    Node 7    -1.2075394842331428
+    Node 8    -6.258749372397844
+    Node 9    3.349647347628633
+Sigmoid Node 11
+    Inputs    Weights
+    Threshold    -11.90803730734122
+    Node 2    2.5340374115719255
+    Node 3    3.8252278185701334
+    Node 4    -2.6431800293557606
+    Node 5    0.9645276150059642
+    Node 6    -5.177377906279301
+    Node 7    8.102402036853663
+    Node 8    5.241625001182286
+    Node 9    4.010478074948392
+Sigmoid Node 12
+    Inputs    Weights
+    Threshold    -4.37617038805593
+    Node 2    4.20356445406042
+    Node 3    -3.157069727553758
+    Node 4    -1.2331899905624812
+    Node 5    -9.224824218692852
+    Node 6    -4.372864335802238
+    Node 7    1.8024754696290048
+    Node 8    7.484972559234506
+    Node 9    -0.07612405358196424
+Sigmoid Node 13
+    Inputs    Weights
+    Threshold    -5.20254501349766
+    Node 2    3.4247998858194757
+    Node 3    -1.5915532055844432
+    Node 4    -1.0663212185781965
+    Node 5    -0.452497744732092
+    Node 6    -3.9373504561836197
+    Node 7    4.128305151455869
+    Node 8    3.328328479445709
+    Node 9    2.4183693207028503
+Sigmoid Node 14
+    Inputs    Weights
+    Threshold    -8.753624583486506
+    Node 2    2.734860291473967
+    Node 3    1.0668904854116186
+    Node 4    -4.092010232076888
+    Node 5    -0.732677400491916
+    Node 6    -3.4029551042800827
+    Node 7    5.179902331625948
+    Node 8    6.576891884349645
+    Node 9    6.7777851454152
+Sigmoid Node 15
+    Inputs    Weights
+    Threshold    -5.127567946296299
+    Node 2    3.3424627828431595
+    Node 3    -2.6883727592877023
+    Node 4    -6.484735441817745
+    Node 5    -0.8785953373428619
+    Node 6    -4.137676065350351
+    Node 7    2.8540434838515667
+    Node 8    6.506805629146537
+    Node 9    5.585767202992604
+Sigmoid Node 16
+    Inputs    Weights
+    Threshold    0.03510945014539328
+    Node 2    9.690022641963955
+    Node 3    1.2211952817573253
+    Node 4    -0.37569606744925044
+    Node 5    -8.73630753970676
+    Node 6    -8.868363238025765
+    Node 7    0.8212102174122164
+    Node 8    -6.976198570359265
+    Node 9    -7.871249992427162
+Sigmoid Node 17
+    Inputs    Weights
+    Threshold    -9.0859512176269
+    Node 2    1.858343868903017
+    Node 3    2.138231988829659
+    Node 4    -4.572776116904495
+    Node 5    -1.4786733368887908
+    Node 6    -4.4343358718256205
+    Node 7    7.159041971851891
+    Node 8    6.72960698047566
+    Node 9    4.8414017117986345
+Sigmoid Node 18
+    Inputs    Weights
+    Threshold    1.106179498603872
+    Node 10    -1.0198501526328738
+    Node 11    -1.8665074377909654
+    Node 12    -1.1004145917805603
+    Node 13    -0.39089358369638744
+    Node 14    -2.5525187235001625
+    Node 15    -2.516026347808884
+    Node 16    -2.05572981039852
+    Node 17    -2.807701284858629
+Sigmoid Node 19
+    Inputs    Weights
+    Threshold    1.2813488387035314
+    Node 10    -1.1173728777774046
+    Node 11    -1.9941299119365556
+    Node 12    -1.1040718435239263
+    Node 13    -0.416962098038734
+    Node 14    -2.5676304325263444
+    Node 15    -2.534988510758138
+    Node 16    -2.163194866780174
+    Node 17    -2.87230015177878
+Sigmoid Node 20
+    Inputs    Weights
+    Threshold    1.3466338085102214
+    Node 10    -1.0556383451677915
+    Node 11    -2.165302541746739
+    Node 12    -1.061295381932126
+    Node 13    -0.5057621380425903
+    Node 14    -2.522866191699244
+    Node 15    -2.533227349285229
+    Node 16    -2.29237273031419
+    Node 17    -2.9229328940970842
+Sigmoid Node 21
+    Inputs    Weights
+    Threshold    1.26027068001096
+    Node 10    -0.9815806721421343
+    Node 11    -2.1280776119649993
+    Node 12    -1.056058673335901
+    Node 13    -0.48941479593144044
+    Node 14    -2.5343904080799056
+    Node 15    -2.5411301727361244
+    Node 16    -2.2533384991139123
+    Node 17    -2.8689392467256507
+Sigmoid Node 22
+    Inputs    Weights
+    Threshold    1.2890784249796379
+    Node 10    -1.0889155752044841
+    Node 11    -2.041748587227908
+    Node 12    -1.0991273359183107
+    Node 13    -0.4047485661941509
+    Node 14    -2.5365081635624374
+    Node 15    -2.568329640072603
+    Node 16    -2.1924168708645935
+    Node 17    -2.8965698131211193
+Sigmoid Node 23
+    Inputs    Weights
+    Threshold    1.2458006167729436
+    Node 10    -1.0810753749986775
+    Node 11    -2.0127778339584195
+    Node 12    -1.092139876791572
+    Node 13    -0.42926000293672556
+    Node 14    -2.51500442095736
+    Node 15    -2.509017652975448
+    Node 16    -2.160949788434973
+    Node 17    -2.88920751577222
+Sigmoid Node 24
+    Inputs    Weights
+    Threshold    1.184338944910022
+    Node 10    -1.0852132769202296
+    Node 11    -1.8374694815883728
+    Node 12    -1.1085089224531441
+    Node 13    -0.39216465314821697
+    Node 14    -2.571592983778788
+    Node 15    -2.5336501679323757
+    Node 16    -2.0780416272179014
+    Node 17    -2.8706406872326364
+Sigmoid Node 25
+    Inputs    Weights
+    Threshold    1.2718582918947423
+    Node 10    -1.015147082990978
+    Node 11    -2.1306466751267297
+    Node 12    -1.06432471850766
+    Node 13    -0.4803042008711008
+    Node 14    -2.515697878402336
+    Node 15    -2.5318321892722073
+    Node 16    -2.242812381593523
+    Node 17    -2.875124671835956
+Class No
+    Input
+    Node 0
+Class Yes
+    Input
+    Node 1
+
+
+Time taken to build model: 29.83 seconds
+
+=== Evaluation on training set ===
+
+Time taken to test model on training data: 0.03 seconds
+
+=== Summary ===
+
+Correctly Classified Instances       10011               91.3496 %
+Incorrectly Classified Instances       948                8.6504 %
+Kappa statistic                          0.7944
+Mean absolute error                      0.1304
+Root mean squared error                  0.2561
+Relative absolute error                 32.2278 %
+Root relative squared error             56.93   %
+Total Number of Instances            10959     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.914    0.088    0.964      0.914    0.938      0.797    0.956     0.982     No
+                 0.912    0.086    0.806      0.912    0.856      0.797    0.956     0.853     Yes
+Weighted Avg.    0.913    0.087    0.919      0.913    0.915      0.797    0.956     0.946     
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 7196  676 |    a = No
+  272 2815 |    b = Yes
+
+
+=== Re-evaluation on test set ===
+
+User supplied test set
+Relation:     covid19-test
+Instances:     unknown (yet). Reading incrementally
+Attributes:   15
+
+=== Summary ===
+
+Correctly Classified Instances        2490               90.8759 %
+Incorrectly Classified Instances       250                9.1241 %
+Kappa statistic                          0.7832
+Mean absolute error                      0.135 
+Root mean squared error                  0.267 
+Total Number of Instances             2740     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.908    0.089    0.963      0.908    0.935      0.787    0.949     0.978     No
+                 0.911    0.092    0.793      0.911    0.848      0.787    0.949     0.835     Yes
+Weighted Avg.    0.909    0.090    0.916      0.909    0.911      0.787    0.949     0.938     
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 1793  182 |    a = No
+   68  697 |    b = Yes
+

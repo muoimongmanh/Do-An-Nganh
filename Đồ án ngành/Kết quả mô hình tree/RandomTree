@@ -1,0 +1,1508 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.RandomTree -K 4 -M 1.0 -V 0.001 -S 1
+Relation:     covid19-train
+Instances:    10959
+Attributes:   15
+              USMER
+              SEX
+              PATIENT_TYPE
+              PNEUMONIA
+              AGE
+              PREGNANT
+              DIABETES
+              COPD
+              ASTHMA
+              INMSUPR
+              HIPERTENSION
+              CARDIOVASCULAR
+              OBESITY
+              TOBACCO
+              DEATH
+Test mode:    evaluate on training data
+
+=== Classifier model (full training set) ===
+
+
+RandomTree
+==========
+
+PATIENT_TYPE < 1.5
+|   PNEUMONIA < 1.5
+|   |   OBESITY < 1.5
+|   |   |   COPD < 1.5 : No (2/0)
+|   |   |   COPD >= 1.5
+|   |   |   |   INMSUPR < 1.5 : No (3/0)
+|   |   |   |   INMSUPR >= 1.5
+|   |   |   |   |   DIABETES < 1.5
+|   |   |   |   |   |   HIPERTENSION < 1.5
+|   |   |   |   |   |   |   SEX < 1.5
+|   |   |   |   |   |   |   |   TOBACCO < 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   |   TOBACCO >= 1.5
+|   |   |   |   |   |   |   |   |   USMER < 1.5 : No (3/1)
+|   |   |   |   |   |   |   |   |   USMER >= 1.5 : No (2/0)
+|   |   |   |   |   |   |   SEX >= 1.5
+|   |   |   |   |   |   |   |   TOBACCO < 1.5 : Yes (2/0)
+|   |   |   |   |   |   |   |   TOBACCO >= 1.5
+|   |   |   |   |   |   |   |   |   CARDIOVASCULAR < 1.5 : No (2/1)
+|   |   |   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5
+|   |   |   |   |   |   |   |   |   |   AGE < 0.75 : No (1/0)
+|   |   |   |   |   |   |   |   |   |   AGE >= 0.75
+|   |   |   |   |   |   |   |   |   |   |   USMER < 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   |   |   |   |   USMER >= 1.5 : No (2/0)
+|   |   |   |   |   |   HIPERTENSION >= 1.5
+|   |   |   |   |   |   |   AGE < 0.75
+|   |   |   |   |   |   |   |   USMER < 1.5 : No (1/0)
+|   |   |   |   |   |   |   |   USMER >= 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   AGE >= 0.75
+|   |   |   |   |   |   |   |   USMER < 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   |   USMER >= 1.5
+|   |   |   |   |   |   |   |   |   CARDIOVASCULAR < 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5 : No (1/0)
+|   |   |   |   |   DIABETES >= 1.5
+|   |   |   |   |   |   AGE < 0.75
+|   |   |   |   |   |   |   CARDIOVASCULAR < 1.5
+|   |   |   |   |   |   |   |   SEX < 1.5
+|   |   |   |   |   |   |   |   |   TOBACCO < 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   |   |   TOBACCO >= 1.5 : No (1/0)
+|   |   |   |   |   |   |   |   SEX >= 1.5 : No (1/0)
+|   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5
+|   |   |   |   |   |   |   |   AGE < 0.25 : No (1/0)
+|   |   |   |   |   |   |   |   AGE >= 0.25
+|   |   |   |   |   |   |   |   |   USMER < 1.5
+|   |   |   |   |   |   |   |   |   |   HIPERTENSION < 1.5 : No (2/1)
+|   |   |   |   |   |   |   |   |   |   HIPERTENSION >= 1.5 : No (12/0)
+|   |   |   |   |   |   |   |   |   USMER >= 1.5
+|   |   |   |   |   |   |   |   |   |   SEX < 1.5 : No (6/0)
+|   |   |   |   |   |   |   |   |   |   SEX >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   HIPERTENSION < 1.5 : No (2/0)
+|   |   |   |   |   |   |   |   |   |   |   HIPERTENSION >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   TOBACCO < 1.5 : No (3/1)
+|   |   |   |   |   |   |   |   |   |   |   |   TOBACCO >= 1.5 : No (6/3)
+|   |   |   |   |   |   AGE >= 0.75
+|   |   |   |   |   |   |   SEX < 1.5
+|   |   |   |   |   |   |   |   HIPERTENSION < 1.5 : Yes (4/1)
+|   |   |   |   |   |   |   |   HIPERTENSION >= 1.5 : Yes (2/0)
+|   |   |   |   |   |   |   SEX >= 1.5 : Yes (4/0)
+|   |   OBESITY >= 1.5
+|   |   |   AGE < 0.75
+|   |   |   |   AGE < 0.25 : No (7.02/0)
+|   |   |   |   AGE >= 0.25
+|   |   |   |   |   USMER < 1.5
+|   |   |   |   |   |   CARDIOVASCULAR < 1.5 : No (1/0)
+|   |   |   |   |   |   CARDIOVASCULAR >= 1.5
+|   |   |   |   |   |   |   ASTHMA < 1.5 : No (3/0)
+|   |   |   |   |   |   |   ASTHMA >= 1.5
+|   |   |   |   |   |   |   |   PREGNANT < 1.5 : No (1/0)
+|   |   |   |   |   |   |   |   PREGNANT >= 1.5
+|   |   |   |   |   |   |   |   |   SEX < 1.5
+|   |   |   |   |   |   |   |   |   |   HIPERTENSION < 1.5 : No (6/0)
+|   |   |   |   |   |   |   |   |   |   HIPERTENSION >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   DIABETES < 1.5 : No (5/2)
+|   |   |   |   |   |   |   |   |   |   |   DIABETES >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   TOBACCO < 1.5 : No (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   TOBACCO >= 1.5 : No (86/2)
+|   |   |   |   |   |   |   |   |   SEX >= 1.5
+|   |   |   |   |   |   |   |   |   |   DIABETES < 1.5 : No (4/0)
+|   |   |   |   |   |   |   |   |   |   DIABETES >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   INMSUPR < 1.5 : No (1/0)
+|   |   |   |   |   |   |   |   |   |   |   INMSUPR >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   HIPERTENSION < 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   TOBACCO < 1.5 : No (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   TOBACCO >= 1.5 : No (5/1)
+|   |   |   |   |   |   |   |   |   |   |   |   HIPERTENSION >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   TOBACCO < 1.5 : No (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   TOBACCO >= 1.5 : No (56.68/2)
+|   |   |   |   |   USMER >= 1.5
+|   |   |   |   |   |   ASTHMA < 1.5 : No (5/0)
+|   |   |   |   |   |   ASTHMA >= 1.5
+|   |   |   |   |   |   |   SEX < 1.5
+|   |   |   |   |   |   |   |   DIABETES < 1.5 : No (4/0)
+|   |   |   |   |   |   |   |   DIABETES >= 1.5
+|   |   |   |   |   |   |   |   |   HIPERTENSION < 1.5 : No (4/1)
+|   |   |   |   |   |   |   |   |   HIPERTENSION >= 1.5
+|   |   |   |   |   |   |   |   |   |   INMSUPR < 1.5 : No (2/0)
+|   |   |   |   |   |   |   |   |   |   INMSUPR >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   TOBACCO < 1.5 : No (1/0)
+|   |   |   |   |   |   |   |   |   |   |   TOBACCO >= 1.5 : No (25/1)
+|   |   |   |   |   |   |   SEX >= 1.5
+|   |   |   |   |   |   |   |   DIABETES < 1.5
+|   |   |   |   |   |   |   |   |   TOBACCO < 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   |   |   TOBACCO >= 1.5
+|   |   |   |   |   |   |   |   |   |   HIPERTENSION < 1.5 : No (1/0)
+|   |   |   |   |   |   |   |   |   |   HIPERTENSION >= 1.5 : No (7/2)
+|   |   |   |   |   |   |   |   DIABETES >= 1.5
+|   |   |   |   |   |   |   |   |   INMSUPR < 1.5
+|   |   |   |   |   |   |   |   |   |   TOBACCO < 1.5 : No (1/0)
+|   |   |   |   |   |   |   |   |   |   TOBACCO >= 1.5 : No (2/1)
+|   |   |   |   |   |   |   |   |   INMSUPR >= 1.5
+|   |   |   |   |   |   |   |   |   |   COPD < 1.5 : No (2/0)
+|   |   |   |   |   |   |   |   |   |   COPD >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   TOBACCO < 1.5 : No (1/0)
+|   |   |   |   |   |   |   |   |   |   |   TOBACCO >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   HIPERTENSION < 1.5 : No (4/0)
+|   |   |   |   |   |   |   |   |   |   |   |   HIPERTENSION >= 1.5 : No (27/6)
+|   |   |   AGE >= 0.75
+|   |   |   |   TOBACCO < 1.5
+|   |   |   |   |   COPD < 1.5 : No (1/0)
+|   |   |   |   |   COPD >= 1.5
+|   |   |   |   |   |   DIABETES < 1.5
+|   |   |   |   |   |   |   HIPERTENSION < 1.5
+|   |   |   |   |   |   |   |   CARDIOVASCULAR < 1.5 : No (1/0)
+|   |   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   HIPERTENSION >= 1.5 : No (3/0)
+|   |   |   |   |   |   DIABETES >= 1.5
+|   |   |   |   |   |   |   USMER < 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   USMER >= 1.5
+|   |   |   |   |   |   |   |   HIPERTENSION < 1.5 : No (1/0)
+|   |   |   |   |   |   |   |   HIPERTENSION >= 1.5 : No (2/1)
+|   |   |   |   TOBACCO >= 1.5
+|   |   |   |   |   CARDIOVASCULAR < 1.5 : No (3/0)
+|   |   |   |   |   CARDIOVASCULAR >= 1.5
+|   |   |   |   |   |   SEX < 1.5
+|   |   |   |   |   |   |   DIABETES < 1.5
+|   |   |   |   |   |   |   |   INMSUPR < 1.5 : No (1/0)
+|   |   |   |   |   |   |   |   INMSUPR >= 1.5
+|   |   |   |   |   |   |   |   |   HIPERTENSION < 1.5
+|   |   |   |   |   |   |   |   |   |   USMER < 1.5 : No (2/0)
+|   |   |   |   |   |   |   |   |   |   USMER >= 1.5 : No (5/2)
+|   |   |   |   |   |   |   |   |   HIPERTENSION >= 1.5 : No (6/3)
+|   |   |   |   |   |   |   DIABETES >= 1.5
+|   |   |   |   |   |   |   |   INMSUPR < 1.5
+|   |   |   |   |   |   |   |   |   HIPERTENSION < 1.5 : No (1/0)
+|   |   |   |   |   |   |   |   |   HIPERTENSION >= 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   |   INMSUPR >= 1.5
+|   |   |   |   |   |   |   |   |   COPD < 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   |   |   COPD >= 1.5
+|   |   |   |   |   |   |   |   |   |   HIPERTENSION < 1.5 : No (11/0)
+|   |   |   |   |   |   |   |   |   |   HIPERTENSION >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   USMER < 1.5 : No (21/1)
+|   |   |   |   |   |   |   |   |   |   |   USMER >= 1.5 : No (7/1)
+|   |   |   |   |   |   SEX >= 1.5
+|   |   |   |   |   |   |   INMSUPR < 1.5 : No (1/0)
+|   |   |   |   |   |   |   INMSUPR >= 1.5
+|   |   |   |   |   |   |   |   USMER < 1.5
+|   |   |   |   |   |   |   |   |   HIPERTENSION < 1.5
+|   |   |   |   |   |   |   |   |   |   DIABETES < 1.5 : No (3/1)
+|   |   |   |   |   |   |   |   |   |   DIABETES >= 1.5 : No (2/0)
+|   |   |   |   |   |   |   |   |   HIPERTENSION >= 1.5
+|   |   |   |   |   |   |   |   |   |   DIABETES < 1.5 : No (2/0)
+|   |   |   |   |   |   |   |   |   |   DIABETES >= 1.5 : No (15.3/2)
+|   |   |   |   |   |   |   |   USMER >= 1.5
+|   |   |   |   |   |   |   |   |   HIPERTENSION < 1.5 : No (12/4)
+|   |   |   |   |   |   |   |   |   HIPERTENSION >= 1.5
+|   |   |   |   |   |   |   |   |   |   DIABETES < 1.5 : No (3/0)
+|   |   |   |   |   |   |   |   |   |   DIABETES >= 1.5 : No (8/2)
+|   PNEUMONIA >= 1.5
+|   |   SEX < 1.5
+|   |   |   AGE < 0.75
+|   |   |   |   COPD < 1.5
+|   |   |   |   |   ASTHMA < 1.5 : No (5.85/0)
+|   |   |   |   |   ASTHMA >= 1.5
+|   |   |   |   |   |   HIPERTENSION < 1.5 : No (2/0)
+|   |   |   |   |   |   HIPERTENSION >= 1.5
+|   |   |   |   |   |   |   PREGNANT < 1.5 : No (3/0)
+|   |   |   |   |   |   |   PREGNANT >= 1.5
+|   |   |   |   |   |   |   |   OBESITY < 1.5 : Yes (2/0)
+|   |   |   |   |   |   |   |   OBESITY >= 1.5 : No (4/0)
+|   |   |   |   COPD >= 1.5
+|   |   |   |   |   DIABETES < 1.5
+|   |   |   |   |   |   AGE < 0.25 : No (1/0)
+|   |   |   |   |   |   AGE >= 0.25
+|   |   |   |   |   |   |   HIPERTENSION < 1.5
+|   |   |   |   |   |   |   |   USMER < 1.5 : No (22/0)
+|   |   |   |   |   |   |   |   USMER >= 1.5
+|   |   |   |   |   |   |   |   |   ASTHMA < 1.5 : No (1/0)
+|   |   |   |   |   |   |   |   |   ASTHMA >= 1.5
+|   |   |   |   |   |   |   |   |   |   INMSUPR < 1.5 : No (1/0)
+|   |   |   |   |   |   |   |   |   |   INMSUPR >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   OBESITY < 1.5 : No (12/0)
+|   |   |   |   |   |   |   |   |   |   |   OBESITY >= 1.5 : No (20/3)
+|   |   |   |   |   |   |   HIPERTENSION >= 1.5 : No (87/0)
+|   |   |   |   |   DIABETES >= 1.5
+|   |   |   |   |   |   TOBACCO < 1.5 : No (152.85/0)
+|   |   |   |   |   |   TOBACCO >= 1.5
+|   |   |   |   |   |   |   ASTHMA < 1.5 : No (134/0)
+|   |   |   |   |   |   |   ASTHMA >= 1.5
+|   |   |   |   |   |   |   |   OBESITY < 1.5
+|   |   |   |   |   |   |   |   |   HIPERTENSION < 1.5 : No (51/0)
+|   |   |   |   |   |   |   |   |   HIPERTENSION >= 1.5
+|   |   |   |   |   |   |   |   |   |   USMER < 1.5 : No (120/0)
+|   |   |   |   |   |   |   |   |   |   USMER >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   INMSUPR < 1.5 : No (1/0)
+|   |   |   |   |   |   |   |   |   |   |   INMSUPR >= 1.5 : No (140/1)
+|   |   |   |   |   |   |   |   OBESITY >= 1.5
+|   |   |   |   |   |   |   |   |   INMSUPR < 1.5
+|   |   |   |   |   |   |   |   |   |   USMER < 1.5
+|   |   |   |   |   |   |   |   |   |   |   AGE < 0.25 : No (2.19/0)
+|   |   |   |   |   |   |   |   |   |   |   AGE >= 0.25
+|   |   |   |   |   |   |   |   |   |   |   |   PREGNANT < 1.5 : No (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   PREGNANT >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   HIPERTENSION < 1.5 : No (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   HIPERTENSION >= 1.5 : No (4.66/1)
+|   |   |   |   |   |   |   |   |   |   USMER >= 1.5 : No (11/0)
+|   |   |   |   |   |   |   |   |   INMSUPR >= 1.5
+|   |   |   |   |   |   |   |   |   |   USMER < 1.5
+|   |   |   |   |   |   |   |   |   |   |   PREGNANT < 1.5 : No (24.85/0)
+|   |   |   |   |   |   |   |   |   |   |   PREGNANT >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   AGE < 0.25 : No (73.23/0)
+|   |   |   |   |   |   |   |   |   |   |   |   AGE >= 0.25
+|   |   |   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR < 1.5 : No (6/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   HIPERTENSION < 1.5 : No (29/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   HIPERTENSION >= 1.5 : No (997.18/1)
+|   |   |   |   |   |   |   |   |   |   USMER >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   HIPERTENSION < 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   PREGNANT < 1.5 : No (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   PREGNANT >= 1.5 : No (65.85/1)
+|   |   |   |   |   |   |   |   |   |   |   HIPERTENSION >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR < 1.5 : No (12/0)
+|   |   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   AGE < 0.25 : No (45.13/0.03)
+|   |   |   |   |   |   |   |   |   |   |   |   |   AGE >= 0.25
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   PREGNANT < 1.5 : No (10/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   PREGNANT >= 1.5 : No (1164.28/3.82)
+|   |   |   AGE >= 0.75
+|   |   |   |   HIPERTENSION < 1.5
+|   |   |   |   |   COPD < 1.5
+|   |   |   |   |   |   ASTHMA < 1.5 : No (1/0)
+|   |   |   |   |   |   ASTHMA >= 1.5
+|   |   |   |   |   |   |   INMSUPR < 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   INMSUPR >= 1.5
+|   |   |   |   |   |   |   |   TOBACCO < 1.5 : No (1/0)
+|   |   |   |   |   |   |   |   TOBACCO >= 1.5
+|   |   |   |   |   |   |   |   |   CARDIOVASCULAR < 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5 : No (5/0)
+|   |   |   |   |   COPD >= 1.5
+|   |   |   |   |   |   INMSUPR < 1.5 : No (7/0)
+|   |   |   |   |   |   INMSUPR >= 1.5
+|   |   |   |   |   |   |   OBESITY < 1.5
+|   |   |   |   |   |   |   |   USMER < 1.5 : No (22/0)
+|   |   |   |   |   |   |   |   USMER >= 1.5
+|   |   |   |   |   |   |   |   |   CARDIOVASCULAR < 1.5 : No (1/0)
+|   |   |   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5
+|   |   |   |   |   |   |   |   |   |   ASTHMA < 1.5 : No (1/0)
+|   |   |   |   |   |   |   |   |   |   ASTHMA >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   TOBACCO < 1.5 : No (1/0)
+|   |   |   |   |   |   |   |   |   |   |   TOBACCO >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   DIABETES < 1.5 : Yes (9/4)
+|   |   |   |   |   |   |   |   |   |   |   |   DIABETES >= 1.5 : No (10/3)
+|   |   |   |   |   |   |   OBESITY >= 1.5
+|   |   |   |   |   |   |   |   CARDIOVASCULAR < 1.5 : No (3/0)
+|   |   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5
+|   |   |   |   |   |   |   |   |   TOBACCO < 1.5 : No (8/0)
+|   |   |   |   |   |   |   |   |   TOBACCO >= 1.5
+|   |   |   |   |   |   |   |   |   |   ASTHMA < 1.5
+|   |   |   |   |   |   |   |   |   |   |   USMER < 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   DIABETES < 1.5 : No (4/0)
+|   |   |   |   |   |   |   |   |   |   |   |   DIABETES >= 1.5 : No (3/1)
+|   |   |   |   |   |   |   |   |   |   |   USMER >= 1.5 : No (4/0)
+|   |   |   |   |   |   |   |   |   |   ASTHMA >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   DIABETES < 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   USMER < 1.5 : No (13/2)
+|   |   |   |   |   |   |   |   |   |   |   |   USMER >= 1.5 : No (20/0)
+|   |   |   |   |   |   |   |   |   |   |   DIABETES >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   USMER < 1.5 : No (27/0)
+|   |   |   |   |   |   |   |   |   |   |   |   USMER >= 1.5 : No (40.15/3)
+|   |   |   |   HIPERTENSION >= 1.5
+|   |   |   |   |   CARDIOVASCULAR < 1.5
+|   |   |   |   |   |   USMER < 1.5
+|   |   |   |   |   |   |   OBESITY < 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   OBESITY >= 1.5 : No (3/1)
+|   |   |   |   |   |   USMER >= 1.5 : No (3/0)
+|   |   |   |   |   CARDIOVASCULAR >= 1.5
+|   |   |   |   |   |   USMER < 1.5
+|   |   |   |   |   |   |   OBESITY < 1.5 : No (18/0)
+|   |   |   |   |   |   |   OBESITY >= 1.5
+|   |   |   |   |   |   |   |   TOBACCO < 1.5
+|   |   |   |   |   |   |   |   |   DIABETES < 1.5 : No (1/0)
+|   |   |   |   |   |   |   |   |   DIABETES >= 1.5
+|   |   |   |   |   |   |   |   |   |   COPD < 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   |   |   |   COPD >= 1.5 : No (9.15/0)
+|   |   |   |   |   |   |   |   TOBACCO >= 1.5
+|   |   |   |   |   |   |   |   |   PREGNANT < 1.5 : No (1.15/0)
+|   |   |   |   |   |   |   |   |   PREGNANT >= 1.5
+|   |   |   |   |   |   |   |   |   |   ASTHMA < 1.5 : No (5.15/0)
+|   |   |   |   |   |   |   |   |   |   ASTHMA >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   DIABETES < 1.5 : No (11/0)
+|   |   |   |   |   |   |   |   |   |   |   DIABETES >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   INMSUPR < 1.5 : No (0.15/0)
+|   |   |   |   |   |   |   |   |   |   |   |   INMSUPR >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   COPD < 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   COPD >= 1.5 : No (157.6/4)
+|   |   |   |   |   |   USMER >= 1.5
+|   |   |   |   |   |   |   OBESITY < 1.5
+|   |   |   |   |   |   |   |   INMSUPR < 1.5 : No (2/0)
+|   |   |   |   |   |   |   |   INMSUPR >= 1.5
+|   |   |   |   |   |   |   |   |   DIABETES < 1.5
+|   |   |   |   |   |   |   |   |   |   TOBACCO < 1.5 : No (1/0)
+|   |   |   |   |   |   |   |   |   |   TOBACCO >= 1.5 : No (2/1)
+|   |   |   |   |   |   |   |   |   DIABETES >= 1.5 : No (16/0)
+|   |   |   |   |   |   |   OBESITY >= 1.5
+|   |   |   |   |   |   |   |   INMSUPR < 1.5 : No (5/0)
+|   |   |   |   |   |   |   |   INMSUPR >= 1.5
+|   |   |   |   |   |   |   |   |   TOBACCO < 1.5 : No (1/0)
+|   |   |   |   |   |   |   |   |   TOBACCO >= 1.5
+|   |   |   |   |   |   |   |   |   |   ASTHMA < 1.5 : No (6/0)
+|   |   |   |   |   |   |   |   |   |   ASTHMA >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   DIABETES < 1.5 : No (14/1)
+|   |   |   |   |   |   |   |   |   |   |   DIABETES >= 1.5 : No (120.6/6.15)
+|   |   SEX >= 1.5
+|   |   |   AGE < 0.75
+|   |   |   |   COPD < 1.5
+|   |   |   |   |   DIABETES < 1.5 : No (4/0)
+|   |   |   |   |   DIABETES >= 1.5
+|   |   |   |   |   |   USMER < 1.5
+|   |   |   |   |   |   |   CARDIOVASCULAR < 1.5 : No (1/0)
+|   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5 : Yes (1/0)
+|   |   |   |   |   |   USMER >= 1.5
+|   |   |   |   |   |   |   ASTHMA < 1.5 : No (1/0)
+|   |   |   |   |   |   |   ASTHMA >= 1.5
+|   |   |   |   |   |   |   |   HIPERTENSION < 1.5 : No (2/1)
+|   |   |   |   |   |   |   |   HIPERTENSION >= 1.5 : No (3/0)
+|   |   |   |   COPD >= 1.5
+|   |   |   |   |   AGE < 0.25 : No (131.41/0)
+|   |   |   |   |   AGE >= 0.25
+|   |   |   |   |   |   OBESITY < 1.5
+|   |   |   |   |   |   |   USMER < 1.5
+|   |   |   |   |   |   |   |   TOBACCO < 1.5 : No (32/0)
+|   |   |   |   |   |   |   |   TOBACCO >= 1.5
+|   |   |   |   |   |   |   |   |   INMSUPR < 1.5 : No (2/0)
+|   |   |   |   |   |   |   |   |   INMSUPR >= 1.5
+|   |   |   |   |   |   |   |   |   |   DIABETES < 1.5
+|   |   |   |   |   |   |   |   |   |   |   ASTHMA < 1.5 : No (4/0)
+|   |   |   |   |   |   |   |   |   |   |   ASTHMA >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   HIPERTENSION < 1.5 : No (9/1)
+|   |   |   |   |   |   |   |   |   |   |   |   HIPERTENSION >= 1.5 : No (16/0)
+|   |   |   |   |   |   |   |   |   |   DIABETES >= 1.5 : No (103/0)
+|   |   |   |   |   |   |   USMER >= 1.5
+|   |   |   |   |   |   |   |   ASTHMA < 1.5
+|   |   |   |   |   |   |   |   |   HIPERTENSION < 1.5 : No (4/1)
+|   |   |   |   |   |   |   |   |   HIPERTENSION >= 1.5 : No (5/0)
+|   |   |   |   |   |   |   |   ASTHMA >= 1.5
+|   |   |   |   |   |   |   |   |   INMSUPR < 1.5 : No (2/0)
+|   |   |   |   |   |   |   |   |   INMSUPR >= 1.5
+|   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR < 1.5
+|   |   |   |   |   |   |   |   |   |   |   DIABETES < 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   HIPERTENSION < 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   HIPERTENSION >= 1.5 : No (2/0)
+|   |   |   |   |   |   |   |   |   |   |   DIABETES >= 1.5 : No (4/0)
+|   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   HIPERTENSION < 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   TOBACCO < 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   DIABETES < 1.5 : No (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   DIABETES >= 1.5 : No (8/1)
+|   |   |   |   |   |   |   |   |   |   |   |   TOBACCO >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   DIABETES < 1.5 : No (10/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   DIABETES >= 1.5 : No (20/2)
+|   |   |   |   |   |   |   |   |   |   |   HIPERTENSION >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   TOBACCO < 1.5 : No (28/1)
+|   |   |   |   |   |   |   |   |   |   |   |   TOBACCO >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   DIABETES < 1.5 : No (5/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   DIABETES >= 1.5 : No (109/3)
+|   |   |   |   |   |   OBESITY >= 1.5
+|   |   |   |   |   |   |   USMER < 1.5
+|   |   |   |   |   |   |   |   CARDIOVASCULAR < 1.5
+|   |   |   |   |   |   |   |   |   HIPERTENSION < 1.5
+|   |   |   |   |   |   |   |   |   |   TOBACCO < 1.5
+|   |   |   |   |   |   |   |   |   |   |   DIABETES < 1.5 : No (1/0)
+|   |   |   |   |   |   |   |   |   |   |   DIABETES >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   INMSUPR < 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   INMSUPR >= 1.5 : No (2/0)
+|   |   |   |   |   |   |   |   |   |   TOBACCO >= 1.5 : No (1/0)
+|   |   |   |   |   |   |   |   |   HIPERTENSION >= 1.5 : No (6.78/0)
+|   |   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5
+|   |   |   |   |   |   |   |   |   ASTHMA < 1.5
+|   |   |   |   |   |   |   |   |   |   TOBACCO < 1.5 : No (5/0)
+|   |   |   |   |   |   |   |   |   |   TOBACCO >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   HIPERTENSION < 1.5 : No (4/0)
+|   |   |   |   |   |   |   |   |   |   |   HIPERTENSION >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   INMSUPR < 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   INMSUPR >= 1.5 : No (18/0)
+|   |   |   |   |   |   |   |   |   ASTHMA >= 1.5
+|   |   |   |   |   |   |   |   |   |   TOBACCO < 1.5 : No (86/0)
+|   |   |   |   |   |   |   |   |   |   TOBACCO >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   DIABETES < 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   HIPERTENSION < 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   INMSUPR < 1.5 : No (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   INMSUPR >= 1.5 : No (8/1)
+|   |   |   |   |   |   |   |   |   |   |   |   HIPERTENSION >= 1.5 : No (20/0)
+|   |   |   |   |   |   |   |   |   |   |   DIABETES >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   HIPERTENSION < 1.5 : No (38/0)
+|   |   |   |   |   |   |   |   |   |   |   |   HIPERTENSION >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   INMSUPR < 1.5 : No (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   INMSUPR >= 1.5 : No (652.88/4)
+|   |   |   |   |   |   |   USMER >= 1.5
+|   |   |   |   |   |   |   |   ASTHMA < 1.5 : No (24/0)
+|   |   |   |   |   |   |   |   ASTHMA >= 1.5
+|   |   |   |   |   |   |   |   |   DIABETES < 1.5
+|   |   |   |   |   |   |   |   |   |   HIPERTENSION < 1.5 : No (27/0)
+|   |   |   |   |   |   |   |   |   |   HIPERTENSION >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   TOBACCO < 1.5 : No (2/0)
+|   |   |   |   |   |   |   |   |   |   |   TOBACCO >= 1.5 : No (31.78/3)
+|   |   |   |   |   |   |   |   |   DIABETES >= 1.5
+|   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR < 1.5
+|   |   |   |   |   |   |   |   |   |   |   HIPERTENSION < 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   TOBACCO < 1.5 : No (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   TOBACCO >= 1.5 : No (4/1)
+|   |   |   |   |   |   |   |   |   |   |   HIPERTENSION >= 1.5 : No (3/0)
+|   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   INMSUPR < 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   TOBACCO < 1.5 : No (2/1)
+|   |   |   |   |   |   |   |   |   |   |   |   TOBACCO >= 1.5 : No (7/1)
+|   |   |   |   |   |   |   |   |   |   |   INMSUPR >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   TOBACCO < 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   HIPERTENSION < 1.5 : No (9/1)
+|   |   |   |   |   |   |   |   |   |   |   |   |   HIPERTENSION >= 1.5 : No (56/0)
+|   |   |   |   |   |   |   |   |   |   |   |   TOBACCO >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   HIPERTENSION < 1.5 : No (51/3)
+|   |   |   |   |   |   |   |   |   |   |   |   |   HIPERTENSION >= 1.5 : No (816.55/6)
+|   |   |   AGE >= 0.75
+|   |   |   |   OBESITY < 1.5
+|   |   |   |   |   USMER < 1.5
+|   |   |   |   |   |   DIABETES < 1.5
+|   |   |   |   |   |   |   COPD < 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   COPD >= 1.5 : No (8/0)
+|   |   |   |   |   |   DIABETES >= 1.5 : No (29/0)
+|   |   |   |   |   USMER >= 1.5
+|   |   |   |   |   |   COPD < 1.5 : Yes (3/0)
+|   |   |   |   |   |   COPD >= 1.5
+|   |   |   |   |   |   |   CARDIOVASCULAR < 1.5 : No (7/0)
+|   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5
+|   |   |   |   |   |   |   |   HIPERTENSION < 1.5
+|   |   |   |   |   |   |   |   |   TOBACCO < 1.5 : No (2/0)
+|   |   |   |   |   |   |   |   |   TOBACCO >= 1.5
+|   |   |   |   |   |   |   |   |   |   DIABETES < 1.5 : No (10/3)
+|   |   |   |   |   |   |   |   |   |   DIABETES >= 1.5 : No (12/1)
+|   |   |   |   |   |   |   |   HIPERTENSION >= 1.5
+|   |   |   |   |   |   |   |   |   DIABETES < 1.5 : No (4/2)
+|   |   |   |   |   |   |   |   |   DIABETES >= 1.5
+|   |   |   |   |   |   |   |   |   |   TOBACCO < 1.5 : No (2/1)
+|   |   |   |   |   |   |   |   |   |   TOBACCO >= 1.5 : No (3/1)
+|   |   |   |   OBESITY >= 1.5
+|   |   |   |   |   HIPERTENSION < 1.5
+|   |   |   |   |   |   ASTHMA < 1.5 : No (4/0)
+|   |   |   |   |   |   ASTHMA >= 1.5
+|   |   |   |   |   |   |   INMSUPR < 1.5 : No (2/0)
+|   |   |   |   |   |   |   INMSUPR >= 1.5
+|   |   |   |   |   |   |   |   USMER < 1.5
+|   |   |   |   |   |   |   |   |   CARDIOVASCULAR < 1.5
+|   |   |   |   |   |   |   |   |   |   DIABETES < 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   |   |   |   DIABETES >= 1.5 : No (1/0)
+|   |   |   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5
+|   |   |   |   |   |   |   |   |   |   COPD < 1.5 : No (2/0)
+|   |   |   |   |   |   |   |   |   |   COPD >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   DIABETES < 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   TOBACCO < 1.5 : No (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   TOBACCO >= 1.5 : No (28/2)
+|   |   |   |   |   |   |   |   |   |   |   DIABETES >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   TOBACCO < 1.5 : No (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   TOBACCO >= 1.5 : No (21/2)
+|   |   |   |   |   |   |   |   USMER >= 1.5
+|   |   |   |   |   |   |   |   |   COPD < 1.5 : No (2/0)
+|   |   |   |   |   |   |   |   |   COPD >= 1.5
+|   |   |   |   |   |   |   |   |   |   DIABETES < 1.5
+|   |   |   |   |   |   |   |   |   |   |   TOBACCO < 1.5 : No (1/0)
+|   |   |   |   |   |   |   |   |   |   |   TOBACCO >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR < 1.5 : No (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5 : No (26/3)
+|   |   |   |   |   |   |   |   |   |   DIABETES >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR < 1.5 : Yes (3/1)
+|   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5 : No (30/3)
+|   |   |   |   |   HIPERTENSION >= 1.5
+|   |   |   |   |   |   COPD < 1.5
+|   |   |   |   |   |   |   CARDIOVASCULAR < 1.5 : Yes (3/0)
+|   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5
+|   |   |   |   |   |   |   |   DIABETES < 1.5 : No (1/0)
+|   |   |   |   |   |   |   |   DIABETES >= 1.5
+|   |   |   |   |   |   |   |   |   USMER < 1.5 : No (2/1)
+|   |   |   |   |   |   |   |   |   USMER >= 1.5 : No (1/0)
+|   |   |   |   |   |   COPD >= 1.5
+|   |   |   |   |   |   |   DIABETES < 1.5 : No (38.18/0)
+|   |   |   |   |   |   |   DIABETES >= 1.5
+|   |   |   |   |   |   |   |   USMER < 1.5
+|   |   |   |   |   |   |   |   |   CARDIOVASCULAR < 1.5 : No (4.18/1)
+|   |   |   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5
+|   |   |   |   |   |   |   |   |   |   TOBACCO < 1.5 : No (7/1)
+|   |   |   |   |   |   |   |   |   |   TOBACCO >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   ASTHMA < 1.5 : No (1/0)
+|   |   |   |   |   |   |   |   |   |   |   ASTHMA >= 1.5 : No (120.9/4)
+|   |   |   |   |   |   |   |   USMER >= 1.5
+|   |   |   |   |   |   |   |   |   CARDIOVASCULAR < 1.5 : No (2/0)
+|   |   |   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5
+|   |   |   |   |   |   |   |   |   |   TOBACCO < 1.5 : No (6/1)
+|   |   |   |   |   |   |   |   |   |   TOBACCO >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   ASTHMA < 1.5 : No (2/0)
+|   |   |   |   |   |   |   |   |   |   |   ASTHMA >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   INMSUPR < 1.5 : No (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   INMSUPR >= 1.5 : No (124.36/10)
+PATIENT_TYPE >= 1.5
+|   HIPERTENSION < 1.5
+|   |   PREGNANT < 1.5 : No (3/0)
+|   |   PREGNANT >= 1.5
+|   |   |   USMER < 1.5
+|   |   |   |   PNEUMONIA < 1.5
+|   |   |   |   |   COPD < 1.5
+|   |   |   |   |   |   INMSUPR < 1.5
+|   |   |   |   |   |   |   ASTHMA < 1.5 : No (1/0)
+|   |   |   |   |   |   |   ASTHMA >= 1.5
+|   |   |   |   |   |   |   |   SEX < 1.5
+|   |   |   |   |   |   |   |   |   AGE < 0.75 : Yes (1/0)
+|   |   |   |   |   |   |   |   |   AGE >= 0.75
+|   |   |   |   |   |   |   |   |   |   DIABETES < 1.5 : Yes (2/0)
+|   |   |   |   |   |   |   |   |   |   DIABETES >= 1.5 : No (2/1)
+|   |   |   |   |   |   |   |   SEX >= 1.5 : Yes (5/0)
+|   |   |   |   |   |   INMSUPR >= 1.5
+|   |   |   |   |   |   |   SEX < 1.5
+|   |   |   |   |   |   |   |   TOBACCO < 1.5 : Yes (4/0)
+|   |   |   |   |   |   |   |   TOBACCO >= 1.5
+|   |   |   |   |   |   |   |   |   OBESITY < 1.5 : Yes (6/0)
+|   |   |   |   |   |   |   |   |   OBESITY >= 1.5
+|   |   |   |   |   |   |   |   |   |   AGE < 0.75 : Yes (2/0)
+|   |   |   |   |   |   |   |   |   |   AGE >= 0.75
+|   |   |   |   |   |   |   |   |   |   |   DIABETES < 1.5 : Yes (9/2)
+|   |   |   |   |   |   |   |   |   |   |   DIABETES >= 1.5 : Yes (9/0)
+|   |   |   |   |   |   |   SEX >= 1.5 : Yes (29/0)
+|   |   |   |   |   COPD >= 1.5
+|   |   |   |   |   |   SEX < 1.5
+|   |   |   |   |   |   |   AGE < 0.75
+|   |   |   |   |   |   |   |   TOBACCO < 1.5
+|   |   |   |   |   |   |   |   |   CARDIOVASCULAR < 1.5 : No (1/0)
+|   |   |   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5
+|   |   |   |   |   |   |   |   |   |   OBESITY < 1.5
+|   |   |   |   |   |   |   |   |   |   |   DIABETES < 1.5 : No (2/1)
+|   |   |   |   |   |   |   |   |   |   |   DIABETES >= 1.5 : Yes (3/1)
+|   |   |   |   |   |   |   |   |   |   OBESITY >= 1.5 : No (1/0)
+|   |   |   |   |   |   |   |   TOBACCO >= 1.5
+|   |   |   |   |   |   |   |   |   DIABETES < 1.5
+|   |   |   |   |   |   |   |   |   |   ASTHMA < 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   |   |   |   ASTHMA >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   OBESITY < 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   INMSUPR < 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   INMSUPR >= 1.5 : No (10/5)
+|   |   |   |   |   |   |   |   |   |   |   OBESITY >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR < 1.5 : No (2/1)
+|   |   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5 : Yes (13/4)
+|   |   |   |   |   |   |   |   |   DIABETES >= 1.5
+|   |   |   |   |   |   |   |   |   |   INMSUPR < 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   |   |   |   INMSUPR >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   OBESITY < 1.5 : No (6/3)
+|   |   |   |   |   |   |   |   |   |   |   OBESITY >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   ASTHMA < 1.5 : Yes (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   ASTHMA >= 1.5 : Yes (11/4)
+|   |   |   |   |   |   |   AGE >= 0.75
+|   |   |   |   |   |   |   |   ASTHMA < 1.5 : Yes (2/0)
+|   |   |   |   |   |   |   |   ASTHMA >= 1.5
+|   |   |   |   |   |   |   |   |   OBESITY < 1.5
+|   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR < 1.5 : Yes (6/0)
+|   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   TOBACCO < 1.5 : Yes (4/0)
+|   |   |   |   |   |   |   |   |   |   |   TOBACCO >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   DIABETES < 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   INMSUPR < 1.5 : Yes (5/2)
+|   |   |   |   |   |   |   |   |   |   |   |   |   INMSUPR >= 1.5 : Yes (20/7)
+|   |   |   |   |   |   |   |   |   |   |   |   DIABETES >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   INMSUPR < 1.5 : No (2/1)
+|   |   |   |   |   |   |   |   |   |   |   |   |   INMSUPR >= 1.5 : Yes (16/4)
+|   |   |   |   |   |   |   |   |   OBESITY >= 1.5
+|   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR < 1.5
+|   |   |   |   |   |   |   |   |   |   |   INMSUPR < 1.5 : Yes (4/1)
+|   |   |   |   |   |   |   |   |   |   |   INMSUPR >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   TOBACCO < 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   DIABETES < 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   DIABETES >= 1.5 : No (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   TOBACCO >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   DIABETES < 1.5 : Yes (9/3)
+|   |   |   |   |   |   |   |   |   |   |   |   |   DIABETES >= 1.5 : No (4/1)
+|   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   TOBACCO < 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   DIABETES < 1.5 : No (4/2)
+|   |   |   |   |   |   |   |   |   |   |   |   DIABETES >= 1.5 : Yes (2/0)
+|   |   |   |   |   |   |   |   |   |   |   TOBACCO >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   INMSUPR < 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   DIABETES < 1.5 : Yes (3/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   DIABETES >= 1.5 : No (2/1)
+|   |   |   |   |   |   |   |   |   |   |   |   INMSUPR >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   DIABETES < 1.5 : Yes (64/12)
+|   |   |   |   |   |   |   |   |   |   |   |   |   DIABETES >= 1.5 : Yes (39/8)
+|   |   |   |   |   |   SEX >= 1.5
+|   |   |   |   |   |   |   DIABETES < 1.5
+|   |   |   |   |   |   |   |   INMSUPR < 1.5
+|   |   |   |   |   |   |   |   |   AGE < 0.75
+|   |   |   |   |   |   |   |   |   |   OBESITY < 1.5 : Yes (3/0)
+|   |   |   |   |   |   |   |   |   |   OBESITY >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR < 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5 : Yes (3/1)
+|   |   |   |   |   |   |   |   |   AGE >= 0.75
+|   |   |   |   |   |   |   |   |   |   TOBACCO < 1.5 : No (1/0)
+|   |   |   |   |   |   |   |   |   |   TOBACCO >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR < 1.5 : Yes (2/0)
+|   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   OBESITY < 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   OBESITY >= 1.5 : Yes (3/1)
+|   |   |   |   |   |   |   |   INMSUPR >= 1.5
+|   |   |   |   |   |   |   |   |   TOBACCO < 1.5
+|   |   |   |   |   |   |   |   |   |   OBESITY < 1.5
+|   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR < 1.5 : Yes (2/0)
+|   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   ASTHMA < 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   ASTHMA >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   AGE < 0.75 : Yes (3/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   AGE >= 0.75 : Yes (7/2)
+|   |   |   |   |   |   |   |   |   |   OBESITY >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR < 1.5 : Yes (4/1)
+|   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   AGE < 0.75 : No (4/2)
+|   |   |   |   |   |   |   |   |   |   |   |   AGE >= 0.75 : Yes (9/0)
+|   |   |   |   |   |   |   |   |   TOBACCO >= 1.5
+|   |   |   |   |   |   |   |   |   |   AGE < 0.75
+|   |   |   |   |   |   |   |   |   |   |   OBESITY < 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   ASTHMA < 1.5 : Yes (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   ASTHMA >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR < 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5 : Yes (12/2)
+|   |   |   |   |   |   |   |   |   |   |   OBESITY >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR < 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   ASTHMA < 1.5 : No (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   ASTHMA >= 1.5 : Yes (23/3)
+|   |   |   |   |   |   |   |   |   |   AGE >= 0.75
+|   |   |   |   |   |   |   |   |   |   |   OBESITY < 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR < 1.5 : Yes (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5 : Yes (17/5)
+|   |   |   |   |   |   |   |   |   |   |   OBESITY >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   ASTHMA < 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   ASTHMA >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR < 1.5 : Yes (9/3)
+|   |   |   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5 : Yes (57/12)
+|   |   |   |   |   |   |   DIABETES >= 1.5
+|   |   |   |   |   |   |   |   CARDIOVASCULAR < 1.5
+|   |   |   |   |   |   |   |   |   TOBACCO < 1.5
+|   |   |   |   |   |   |   |   |   |   OBESITY < 1.5 : Yes (2/0)
+|   |   |   |   |   |   |   |   |   |   OBESITY >= 1.5 : Yes (3/1)
+|   |   |   |   |   |   |   |   |   TOBACCO >= 1.5 : Yes (4/0)
+|   |   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5
+|   |   |   |   |   |   |   |   |   OBESITY < 1.5
+|   |   |   |   |   |   |   |   |   |   ASTHMA < 1.5 : Yes (2/0)
+|   |   |   |   |   |   |   |   |   |   ASTHMA >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   AGE < 0.75
+|   |   |   |   |   |   |   |   |   |   |   |   TOBACCO < 1.5 : Yes (5/2)
+|   |   |   |   |   |   |   |   |   |   |   |   TOBACCO >= 1.5 : Yes (8/0)
+|   |   |   |   |   |   |   |   |   |   |   AGE >= 0.75
+|   |   |   |   |   |   |   |   |   |   |   |   INMSUPR < 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   INMSUPR >= 1.5 : Yes (10/2)
+|   |   |   |   |   |   |   |   |   OBESITY >= 1.5
+|   |   |   |   |   |   |   |   |   |   ASTHMA < 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   |   |   |   ASTHMA >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   INMSUPR < 1.5 : Yes (2/0)
+|   |   |   |   |   |   |   |   |   |   |   INMSUPR >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   AGE < 0.75
+|   |   |   |   |   |   |   |   |   |   |   |   |   TOBACCO < 1.5 : Yes (4/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   TOBACCO >= 1.5 : Yes (26/10)
+|   |   |   |   |   |   |   |   |   |   |   |   AGE >= 0.75
+|   |   |   |   |   |   |   |   |   |   |   |   |   TOBACCO < 1.5 : Yes (8/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   TOBACCO >= 1.5 : Yes (53/5)
+|   |   |   |   PNEUMONIA >= 1.5
+|   |   |   |   |   COPD < 1.5
+|   |   |   |   |   |   ASTHMA < 1.5 : Yes (4/0)
+|   |   |   |   |   |   ASTHMA >= 1.5
+|   |   |   |   |   |   |   CARDIOVASCULAR < 1.5 : Yes (7/0)
+|   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5
+|   |   |   |   |   |   |   |   OBESITY < 1.5 : Yes (2/0)
+|   |   |   |   |   |   |   |   OBESITY >= 1.5
+|   |   |   |   |   |   |   |   |   DIABETES < 1.5
+|   |   |   |   |   |   |   |   |   |   SEX < 1.5 : Yes (5/1)
+|   |   |   |   |   |   |   |   |   |   SEX >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   TOBACCO < 1.5 : Yes (3/0)
+|   |   |   |   |   |   |   |   |   |   |   TOBACCO >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   AGE < 0.75 : Yes (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   AGE >= 0.75 : No (2/1)
+|   |   |   |   |   |   |   |   |   DIABETES >= 1.5
+|   |   |   |   |   |   |   |   |   |   SEX < 1.5 : Yes (7/1)
+|   |   |   |   |   |   |   |   |   |   SEX >= 1.5 : Yes (5/0)
+|   |   |   |   |   COPD >= 1.5
+|   |   |   |   |   |   INMSUPR < 1.5
+|   |   |   |   |   |   |   AGE < 0.75
+|   |   |   |   |   |   |   |   DIABETES < 1.5 : Yes (2/0)
+|   |   |   |   |   |   |   |   DIABETES >= 1.5
+|   |   |   |   |   |   |   |   |   TOBACCO < 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   |   |   TOBACCO >= 1.5
+|   |   |   |   |   |   |   |   |   |   OBESITY < 1.5 : No (2/1)
+|   |   |   |   |   |   |   |   |   |   OBESITY >= 1.5 : No (1.46/0.46)
+|   |   |   |   |   |   |   AGE >= 0.75 : Yes (7.54/0)
+|   |   |   |   |   |   INMSUPR >= 1.5
+|   |   |   |   |   |   |   ASTHMA < 1.5
+|   |   |   |   |   |   |   |   TOBACCO < 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   |   TOBACCO >= 1.5
+|   |   |   |   |   |   |   |   |   OBESITY < 1.5 : No (1/0)
+|   |   |   |   |   |   |   |   |   OBESITY >= 1.5
+|   |   |   |   |   |   |   |   |   |   AGE < 0.75 : No (1/0)
+|   |   |   |   |   |   |   |   |   |   AGE >= 0.75 : Yes (2/0)
+|   |   |   |   |   |   |   ASTHMA >= 1.5
+|   |   |   |   |   |   |   |   TOBACCO < 1.5
+|   |   |   |   |   |   |   |   |   DIABETES < 1.5
+|   |   |   |   |   |   |   |   |   |   SEX < 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   |   |   |   SEX >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   OBESITY < 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   |   |   |   |   OBESITY >= 1.5 : Yes (9/4)
+|   |   |   |   |   |   |   |   |   DIABETES >= 1.5
+|   |   |   |   |   |   |   |   |   |   OBESITY < 1.5 : Yes (5/0)
+|   |   |   |   |   |   |   |   |   |   OBESITY >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR < 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   AGE < 0.75 : Yes (3/1)
+|   |   |   |   |   |   |   |   |   |   |   |   AGE >= 0.75 : Yes (8/0)
+|   |   |   |   |   |   |   |   TOBACCO >= 1.5
+|   |   |   |   |   |   |   |   |   CARDIOVASCULAR < 1.5
+|   |   |   |   |   |   |   |   |   |   AGE < 0.75 : Yes (2/0)
+|   |   |   |   |   |   |   |   |   |   AGE >= 0.75
+|   |   |   |   |   |   |   |   |   |   |   OBESITY < 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   SEX < 1.5 : Yes (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   SEX >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   DIABETES < 1.5 : Yes (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   DIABETES >= 1.5 : No (2/1)
+|   |   |   |   |   |   |   |   |   |   |   OBESITY >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   SEX < 1.5 : Yes (5/1)
+|   |   |   |   |   |   |   |   |   |   |   |   SEX >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   DIABETES < 1.5 : Yes (5/1)
+|   |   |   |   |   |   |   |   |   |   |   |   |   DIABETES >= 1.5 : Yes (3/0)
+|   |   |   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5
+|   |   |   |   |   |   |   |   |   |   SEX < 1.5
+|   |   |   |   |   |   |   |   |   |   |   DIABETES < 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   OBESITY < 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   AGE < 0.75 : Yes (6/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   AGE >= 0.75 : Yes (10/1)
+|   |   |   |   |   |   |   |   |   |   |   |   OBESITY >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   AGE < 0.75 : Yes (11/1)
+|   |   |   |   |   |   |   |   |   |   |   |   |   AGE >= 0.75 : Yes (40/6)
+|   |   |   |   |   |   |   |   |   |   |   DIABETES >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   AGE < 0.75
+|   |   |   |   |   |   |   |   |   |   |   |   |   OBESITY < 1.5 : Yes (3/1)
+|   |   |   |   |   |   |   |   |   |   |   |   |   OBESITY >= 1.5 : No (8/4)
+|   |   |   |   |   |   |   |   |   |   |   |   AGE >= 0.75
+|   |   |   |   |   |   |   |   |   |   |   |   |   OBESITY < 1.5 : Yes (4/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   OBESITY >= 1.5 : Yes (19/2)
+|   |   |   |   |   |   |   |   |   |   SEX >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   DIABETES < 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   OBESITY < 1.5 : Yes (8/0)
+|   |   |   |   |   |   |   |   |   |   |   |   OBESITY >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   AGE < 0.75 : Yes (16/1)
+|   |   |   |   |   |   |   |   |   |   |   |   |   AGE >= 0.75 : Yes (45/6)
+|   |   |   |   |   |   |   |   |   |   |   DIABETES >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   OBESITY < 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   AGE < 0.75 : Yes (6/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   AGE >= 0.75 : Yes (8/3)
+|   |   |   |   |   |   |   |   |   |   |   |   OBESITY >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   AGE < 0.75 : Yes (15/2)
+|   |   |   |   |   |   |   |   |   |   |   |   |   AGE >= 0.75 : Yes (22/0)
+|   |   |   USMER >= 1.5
+|   |   |   |   ASTHMA < 1.5
+|   |   |   |   |   AGE < 0.75
+|   |   |   |   |   |   INMSUPR < 1.5 : Yes (1/0)
+|   |   |   |   |   |   INMSUPR >= 1.5
+|   |   |   |   |   |   |   TOBACCO < 1.5 : No (1/0)
+|   |   |   |   |   |   |   TOBACCO >= 1.5 : Yes (3/0)
+|   |   |   |   |   AGE >= 0.75 : Yes (11/0)
+|   |   |   |   ASTHMA >= 1.5
+|   |   |   |   |   PNEUMONIA < 1.5
+|   |   |   |   |   |   TOBACCO < 1.5
+|   |   |   |   |   |   |   INMSUPR < 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   INMSUPR >= 1.5
+|   |   |   |   |   |   |   |   DIABETES < 1.5
+|   |   |   |   |   |   |   |   |   OBESITY < 1.5 : Yes (4/0)
+|   |   |   |   |   |   |   |   |   OBESITY >= 1.5
+|   |   |   |   |   |   |   |   |   |   COPD < 1.5 : Yes (4/0)
+|   |   |   |   |   |   |   |   |   |   COPD >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   AGE < 0.75
+|   |   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR < 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5 : Yes (5/1)
+|   |   |   |   |   |   |   |   |   |   |   AGE >= 0.75
+|   |   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR < 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   SEX < 1.5 : No (2/1)
+|   |   |   |   |   |   |   |   |   |   |   |   |   SEX >= 1.5 : Yes (12/1)
+|   |   |   |   |   |   |   |   DIABETES >= 1.5 : Yes (23/0)
+|   |   |   |   |   |   TOBACCO >= 1.5
+|   |   |   |   |   |   |   COPD < 1.5
+|   |   |   |   |   |   |   |   INMSUPR < 1.5
+|   |   |   |   |   |   |   |   |   CARDIOVASCULAR < 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5 : No (1/0)
+|   |   |   |   |   |   |   |   INMSUPR >= 1.5
+|   |   |   |   |   |   |   |   |   CARDIOVASCULAR < 1.5
+|   |   |   |   |   |   |   |   |   |   DIABETES < 1.5
+|   |   |   |   |   |   |   |   |   |   |   OBESITY < 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   SEX < 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   SEX >= 1.5 : No (2/0)
+|   |   |   |   |   |   |   |   |   |   |   OBESITY >= 1.5 : Yes (6/0)
+|   |   |   |   |   |   |   |   |   |   DIABETES >= 1.5 : Yes (2/0)
+|   |   |   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5
+|   |   |   |   |   |   |   |   |   |   OBESITY < 1.5 : Yes (3/0)
+|   |   |   |   |   |   |   |   |   |   OBESITY >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   DIABETES < 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   SEX < 1.5 : Yes (7/1)
+|   |   |   |   |   |   |   |   |   |   |   |   SEX >= 1.5 : Yes (6/2)
+|   |   |   |   |   |   |   |   |   |   |   DIABETES >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   SEX < 1.5 : Yes (5/1)
+|   |   |   |   |   |   |   |   |   |   |   |   SEX >= 1.5 : Yes (3/0)
+|   |   |   |   |   |   |   COPD >= 1.5
+|   |   |   |   |   |   |   |   DIABETES < 1.5
+|   |   |   |   |   |   |   |   |   OBESITY < 1.5
+|   |   |   |   |   |   |   |   |   |   SEX < 1.5
+|   |   |   |   |   |   |   |   |   |   |   INMSUPR < 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   AGE < 0.75
+|   |   |   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR < 1.5 : No (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5 : Yes (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   AGE >= 0.75 : Yes (6/0)
+|   |   |   |   |   |   |   |   |   |   |   INMSUPR >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR < 1.5 : Yes (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   AGE < 0.75 : Yes (3/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   AGE >= 0.75 : Yes (11/3)
+|   |   |   |   |   |   |   |   |   |   SEX >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR < 1.5 : Yes (5/0)
+|   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   INMSUPR < 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   AGE < 0.75 : No (2/1)
+|   |   |   |   |   |   |   |   |   |   |   |   |   AGE >= 0.75 : Yes (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   INMSUPR >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   AGE < 0.75 : Yes (8/1)
+|   |   |   |   |   |   |   |   |   |   |   |   |   AGE >= 0.75 : Yes (14/3)
+|   |   |   |   |   |   |   |   |   OBESITY >= 1.5
+|   |   |   |   |   |   |   |   |   |   INMSUPR < 1.5
+|   |   |   |   |   |   |   |   |   |   |   AGE < 0.75 : No (2/1)
+|   |   |   |   |   |   |   |   |   |   |   AGE >= 0.75 : Yes (9/0)
+|   |   |   |   |   |   |   |   |   |   INMSUPR >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   AGE < 0.75
+|   |   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR < 1.5 : No (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   SEX < 1.5 : Yes (4/1)
+|   |   |   |   |   |   |   |   |   |   |   |   |   SEX >= 1.5 : Yes (16/2)
+|   |   |   |   |   |   |   |   |   |   |   AGE >= 0.75
+|   |   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR < 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   SEX < 1.5 : Yes (6/2)
+|   |   |   |   |   |   |   |   |   |   |   |   |   SEX >= 1.5 : Yes (3/0)
+|   |   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   SEX < 1.5 : Yes (35/7)
+|   |   |   |   |   |   |   |   |   |   |   |   |   SEX >= 1.5 : Yes (40/3)
+|   |   |   |   |   |   |   |   DIABETES >= 1.5
+|   |   |   |   |   |   |   |   |   SEX < 1.5
+|   |   |   |   |   |   |   |   |   |   OBESITY < 1.5
+|   |   |   |   |   |   |   |   |   |   |   AGE < 0.75 : Yes (7/0)
+|   |   |   |   |   |   |   |   |   |   |   AGE >= 0.75
+|   |   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR < 1.5 : Yes (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5 : Yes (9/2)
+|   |   |   |   |   |   |   |   |   |   OBESITY >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR < 1.5 : Yes (7/0)
+|   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   INMSUPR < 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   INMSUPR >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   AGE < 0.75 : Yes (6/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   AGE >= 0.75 : Yes (25/1)
+|   |   |   |   |   |   |   |   |   SEX >= 1.5
+|   |   |   |   |   |   |   |   |   |   INMSUPR < 1.5 : Yes (3/0)
+|   |   |   |   |   |   |   |   |   |   INMSUPR >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   AGE < 0.75
+|   |   |   |   |   |   |   |   |   |   |   |   OBESITY < 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR < 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5 : Yes (3/1)
+|   |   |   |   |   |   |   |   |   |   |   |   OBESITY >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR < 1.5 : Yes (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   AGE < 0.25 : Yes (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   AGE >= 0.25 : Yes (11/2)
+|   |   |   |   |   |   |   |   |   |   |   AGE >= 0.75
+|   |   |   |   |   |   |   |   |   |   |   |   OBESITY < 1.5 : Yes (7/0)
+|   |   |   |   |   |   |   |   |   |   |   |   OBESITY >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR < 1.5 : Yes (8/2)
+|   |   |   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5 : Yes (31/3)
+|   |   |   |   |   PNEUMONIA >= 1.5
+|   |   |   |   |   |   CARDIOVASCULAR < 1.5
+|   |   |   |   |   |   |   SEX < 1.5
+|   |   |   |   |   |   |   |   COPD < 1.5 : Yes (3/0)
+|   |   |   |   |   |   |   |   COPD >= 1.5
+|   |   |   |   |   |   |   |   |   INMSUPR < 1.5 : Yes (2/0)
+|   |   |   |   |   |   |   |   |   INMSUPR >= 1.5
+|   |   |   |   |   |   |   |   |   |   OBESITY < 1.5 : No (1/0)
+|   |   |   |   |   |   |   |   |   |   OBESITY >= 1.5 : Yes (3/1)
+|   |   |   |   |   |   |   SEX >= 1.5
+|   |   |   |   |   |   |   |   AGE < 0.75
+|   |   |   |   |   |   |   |   |   DIABETES < 1.5 : No (1/0)
+|   |   |   |   |   |   |   |   |   DIABETES >= 1.5 : Yes (3/0)
+|   |   |   |   |   |   |   |   AGE >= 0.75 : Yes (12/0)
+|   |   |   |   |   |   CARDIOVASCULAR >= 1.5
+|   |   |   |   |   |   |   AGE < 0.75
+|   |   |   |   |   |   |   |   SEX < 1.5
+|   |   |   |   |   |   |   |   |   DIABETES < 1.5
+|   |   |   |   |   |   |   |   |   |   OBESITY < 1.5 : Yes (4/1)
+|   |   |   |   |   |   |   |   |   |   OBESITY >= 1.5 : Yes (6/0)
+|   |   |   |   |   |   |   |   |   DIABETES >= 1.5
+|   |   |   |   |   |   |   |   |   |   OBESITY < 1.5 : Yes (2/0)
+|   |   |   |   |   |   |   |   |   |   OBESITY >= 1.5 : Yes (5/2)
+|   |   |   |   |   |   |   |   SEX >= 1.5
+|   |   |   |   |   |   |   |   |   INMSUPR < 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   |   |   INMSUPR >= 1.5
+|   |   |   |   |   |   |   |   |   |   OBESITY < 1.5
+|   |   |   |   |   |   |   |   |   |   |   DIABETES < 1.5 : Yes (5/1)
+|   |   |   |   |   |   |   |   |   |   |   DIABETES >= 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   |   |   |   OBESITY >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   TOBACCO < 1.5 : No (1/0)
+|   |   |   |   |   |   |   |   |   |   |   TOBACCO >= 1.5 : Yes (13/0)
+|   |   |   |   |   |   |   AGE >= 0.75
+|   |   |   |   |   |   |   |   INMSUPR < 1.5 : Yes (10/0)
+|   |   |   |   |   |   |   |   INMSUPR >= 1.5
+|   |   |   |   |   |   |   |   |   TOBACCO < 1.5 : Yes (10/0)
+|   |   |   |   |   |   |   |   |   TOBACCO >= 1.5
+|   |   |   |   |   |   |   |   |   |   SEX < 1.5
+|   |   |   |   |   |   |   |   |   |   |   DIABETES < 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   COPD < 1.5 : Yes (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   COPD >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   OBESITY < 1.5 : Yes (6/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   OBESITY >= 1.5 : Yes (16/1)
+|   |   |   |   |   |   |   |   |   |   |   DIABETES >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   COPD < 1.5 : Yes (3/0)
+|   |   |   |   |   |   |   |   |   |   |   |   COPD >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   OBESITY < 1.5 : Yes (4/1)
+|   |   |   |   |   |   |   |   |   |   |   |   |   OBESITY >= 1.5 : Yes (16/0)
+|   |   |   |   |   |   |   |   |   |   SEX >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   COPD < 1.5 : Yes (7/0)
+|   |   |   |   |   |   |   |   |   |   |   COPD >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   OBESITY < 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   DIABETES < 1.5 : Yes (7/1)
+|   |   |   |   |   |   |   |   |   |   |   |   |   DIABETES >= 1.5 : No (2/1)
+|   |   |   |   |   |   |   |   |   |   |   |   OBESITY >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   DIABETES < 1.5 : Yes (34/2)
+|   |   |   |   |   |   |   |   |   |   |   |   |   DIABETES >= 1.5 : Yes (20/2)
+|   HIPERTENSION >= 1.5
+|   |   USMER < 1.5
+|   |   |   AGE < 0.75
+|   |   |   |   DIABETES < 1.5
+|   |   |   |   |   ASTHMA < 1.5
+|   |   |   |   |   |   TOBACCO < 1.5
+|   |   |   |   |   |   |   OBESITY < 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   OBESITY >= 1.5
+|   |   |   |   |   |   |   |   SEX < 1.5 : No (1/0)
+|   |   |   |   |   |   |   |   SEX >= 1.5 : Yes (1/0)
+|   |   |   |   |   |   TOBACCO >= 1.5 : Yes (3/0)
+|   |   |   |   |   ASTHMA >= 1.5
+|   |   |   |   |   |   OBESITY < 1.5
+|   |   |   |   |   |   |   COPD < 1.5 : Yes (2/0)
+|   |   |   |   |   |   |   COPD >= 1.5
+|   |   |   |   |   |   |   |   PREGNANT < 1.5 : No (1/0)
+|   |   |   |   |   |   |   |   PREGNANT >= 1.5
+|   |   |   |   |   |   |   |   |   CARDIOVASCULAR < 1.5
+|   |   |   |   |   |   |   |   |   |   PNEUMONIA < 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   |   |   |   PNEUMONIA >= 1.5 : No (1/0)
+|   |   |   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5
+|   |   |   |   |   |   |   |   |   |   PNEUMONIA < 1.5
+|   |   |   |   |   |   |   |   |   |   |   INMSUPR < 1.5 : Yes (2/0)
+|   |   |   |   |   |   |   |   |   |   |   INMSUPR >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   SEX < 1.5 : Yes (5/2)
+|   |   |   |   |   |   |   |   |   |   |   |   SEX >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   TOBACCO < 1.5 : No (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   TOBACCO >= 1.5 : Yes (10/4)
+|   |   |   |   |   |   |   |   |   |   PNEUMONIA >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   TOBACCO < 1.5 : Yes (2/0)
+|   |   |   |   |   |   |   |   |   |   |   TOBACCO >= 1.5 : No (3/1)
+|   |   |   |   |   |   OBESITY >= 1.5
+|   |   |   |   |   |   |   TOBACCO < 1.5 : Yes (6/1)
+|   |   |   |   |   |   |   TOBACCO >= 1.5
+|   |   |   |   |   |   |   |   INMSUPR < 1.5 : Yes (6/0)
+|   |   |   |   |   |   |   |   INMSUPR >= 1.5
+|   |   |   |   |   |   |   |   |   PREGNANT < 1.5 : No (1/0)
+|   |   |   |   |   |   |   |   |   PREGNANT >= 1.5
+|   |   |   |   |   |   |   |   |   |   AGE < 0.25 : No (2/1)
+|   |   |   |   |   |   |   |   |   |   AGE >= 0.25
+|   |   |   |   |   |   |   |   |   |   |   PNEUMONIA < 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   SEX < 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR < 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5 : Yes (20/6)
+|   |   |   |   |   |   |   |   |   |   |   |   SEX >= 1.5 : Yes (32/8)
+|   |   |   |   |   |   |   |   |   |   |   PNEUMONIA >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   SEX < 1.5 : Yes (6/2)
+|   |   |   |   |   |   |   |   |   |   |   |   SEX >= 1.5 : Yes (12/2)
+|   |   |   |   DIABETES >= 1.5
+|   |   |   |   |   AGE < 0.25
+|   |   |   |   |   |   CARDIOVASCULAR < 1.5
+|   |   |   |   |   |   |   SEX < 1.5 : No (4/2)
+|   |   |   |   |   |   |   SEX >= 1.5
+|   |   |   |   |   |   |   |   PNEUMONIA < 1.5 : No (5.1/1)
+|   |   |   |   |   |   |   |   PNEUMONIA >= 1.5 : Yes (0.1/0)
+|   |   |   |   |   |   CARDIOVASCULAR >= 1.5
+|   |   |   |   |   |   |   PNEUMONIA < 1.5
+|   |   |   |   |   |   |   |   INMSUPR < 1.5
+|   |   |   |   |   |   |   |   |   SEX < 1.5
+|   |   |   |   |   |   |   |   |   |   ASTHMA < 1.5 : No (1/0)
+|   |   |   |   |   |   |   |   |   |   ASTHMA >= 1.5 : No (4.21/1)
+|   |   |   |   |   |   |   |   |   SEX >= 1.5 : No (6/2)
+|   |   |   |   |   |   |   |   INMSUPR >= 1.5
+|   |   |   |   |   |   |   |   |   OBESITY < 1.5
+|   |   |   |   |   |   |   |   |   |   SEX < 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   |   |   |   SEX >= 1.5 : No (2/0)
+|   |   |   |   |   |   |   |   |   OBESITY >= 1.5
+|   |   |   |   |   |   |   |   |   |   ASTHMA < 1.5 : No (3/1)
+|   |   |   |   |   |   |   |   |   |   ASTHMA >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   SEX < 1.5 : No (21.31/5)
+|   |   |   |   |   |   |   |   |   |   |   SEX >= 1.5 : No (28.1/4)
+|   |   |   |   |   |   |   PNEUMONIA >= 1.5
+|   |   |   |   |   |   |   |   OBESITY < 1.5 : No (1/0)
+|   |   |   |   |   |   |   |   OBESITY >= 1.5
+|   |   |   |   |   |   |   |   |   INMSUPR < 1.5
+|   |   |   |   |   |   |   |   |   |   SEX < 1.5 : No (7/1)
+|   |   |   |   |   |   |   |   |   |   SEX >= 1.5 : No (2/0)
+|   |   |   |   |   |   |   |   |   INMSUPR >= 1.5
+|   |   |   |   |   |   |   |   |   |   ASTHMA < 1.5 : No (1/0)
+|   |   |   |   |   |   |   |   |   |   ASTHMA >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   SEX < 1.5 : No (14.52/2.1)
+|   |   |   |   |   |   |   |   |   |   |   SEX >= 1.5 : No (20.83/4.1)
+|   |   |   |   |   AGE >= 0.25
+|   |   |   |   |   |   SEX < 1.5
+|   |   |   |   |   |   |   OBESITY < 1.5
+|   |   |   |   |   |   |   |   CARDIOVASCULAR < 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5
+|   |   |   |   |   |   |   |   |   ASTHMA < 1.5
+|   |   |   |   |   |   |   |   |   |   TOBACCO < 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   |   |   |   TOBACCO >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   PNEUMONIA < 1.5 : No (2/1)
+|   |   |   |   |   |   |   |   |   |   |   PNEUMONIA >= 1.5 : No (2/0)
+|   |   |   |   |   |   |   |   |   ASTHMA >= 1.5
+|   |   |   |   |   |   |   |   |   |   PREGNANT < 1.5
+|   |   |   |   |   |   |   |   |   |   |   PNEUMONIA < 1.5 : No (2/1)
+|   |   |   |   |   |   |   |   |   |   |   PNEUMONIA >= 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   |   |   |   PREGNANT >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   INMSUPR < 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   |   |   |   |   INMSUPR >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   TOBACCO < 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   PNEUMONIA < 1.5 : Yes (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   PNEUMONIA >= 1.5 : No (2/1)
+|   |   |   |   |   |   |   |   |   |   |   |   TOBACCO >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   PNEUMONIA < 1.5 : Yes (15/7)
+|   |   |   |   |   |   |   |   |   |   |   |   |   PNEUMONIA >= 1.5 : Yes (3/0)
+|   |   |   |   |   |   |   OBESITY >= 1.5
+|   |   |   |   |   |   |   |   PREGNANT < 1.5 : No (4/0)
+|   |   |   |   |   |   |   |   PREGNANT >= 1.5
+|   |   |   |   |   |   |   |   |   INMSUPR < 1.5
+|   |   |   |   |   |   |   |   |   |   PNEUMONIA < 1.5
+|   |   |   |   |   |   |   |   |   |   |   TOBACCO < 1.5 : No (1/0)
+|   |   |   |   |   |   |   |   |   |   |   TOBACCO >= 1.5 : Yes (3.92/0.92)
+|   |   |   |   |   |   |   |   |   |   PNEUMONIA >= 1.5 : Yes (2/0)
+|   |   |   |   |   |   |   |   |   INMSUPR >= 1.5
+|   |   |   |   |   |   |   |   |   |   ASTHMA < 1.5
+|   |   |   |   |   |   |   |   |   |   |   TOBACCO < 1.5 : No (1/0)
+|   |   |   |   |   |   |   |   |   |   |   TOBACCO >= 1.5 : Yes (2/0)
+|   |   |   |   |   |   |   |   |   |   ASTHMA >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   TOBACCO < 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   PNEUMONIA < 1.5 : No (5/2)
+|   |   |   |   |   |   |   |   |   |   |   |   PNEUMONIA >= 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   |   |   |   |   TOBACCO >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR < 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   PNEUMONIA < 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   PNEUMONIA >= 1.5 : No (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   PNEUMONIA < 1.5 : No (82.37/38)
+|   |   |   |   |   |   |   |   |   |   |   |   |   PNEUMONIA >= 1.5 : No (64.29/22.46)
+|   |   |   |   |   |   SEX >= 1.5
+|   |   |   |   |   |   |   INMSUPR < 1.5 : Yes (7/0)
+|   |   |   |   |   |   |   INMSUPR >= 1.5
+|   |   |   |   |   |   |   |   COPD < 1.5 : Yes (5/0)
+|   |   |   |   |   |   |   |   COPD >= 1.5
+|   |   |   |   |   |   |   |   |   OBESITY < 1.5
+|   |   |   |   |   |   |   |   |   |   TOBACCO < 1.5
+|   |   |   |   |   |   |   |   |   |   |   PNEUMONIA < 1.5 : Yes (4/1)
+|   |   |   |   |   |   |   |   |   |   |   PNEUMONIA >= 1.5 : Yes (3/0)
+|   |   |   |   |   |   |   |   |   |   TOBACCO >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR < 1.5 : Yes (3/0)
+|   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   PNEUMONIA < 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   ASTHMA < 1.5 : Yes (3/1)
+|   |   |   |   |   |   |   |   |   |   |   |   |   ASTHMA >= 1.5 : Yes (34/8)
+|   |   |   |   |   |   |   |   |   |   |   |   PNEUMONIA >= 1.5 : Yes (21/7)
+|   |   |   |   |   |   |   |   |   OBESITY >= 1.5
+|   |   |   |   |   |   |   |   |   |   PNEUMONIA < 1.5
+|   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR < 1.5 : No (0.46/0)
+|   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   TOBACCO < 1.5 : Yes (12/3)
+|   |   |   |   |   |   |   |   |   |   |   |   TOBACCO >= 1.5 : Yes (139.46/52.46)
+|   |   |   |   |   |   |   |   |   |   PNEUMONIA >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   TOBACCO < 1.5 : No (7/2)
+|   |   |   |   |   |   |   |   |   |   |   TOBACCO >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR < 1.5 : Yes (2.46/1)
+|   |   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   ASTHMA < 1.5 : No (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   ASTHMA >= 1.5 : Yes (96.67/47.21)
+|   |   |   AGE >= 0.75
+|   |   |   |   OBESITY < 1.5
+|   |   |   |   |   COPD < 1.5 : Yes (15/0)
+|   |   |   |   |   COPD >= 1.5
+|   |   |   |   |   |   SEX < 1.5
+|   |   |   |   |   |   |   PNEUMONIA < 1.5
+|   |   |   |   |   |   |   |   TOBACCO < 1.5
+|   |   |   |   |   |   |   |   |   DIABETES < 1.5 : No (2/1)
+|   |   |   |   |   |   |   |   |   DIABETES >= 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   |   TOBACCO >= 1.5
+|   |   |   |   |   |   |   |   |   DIABETES < 1.5 : Yes (7/0)
+|   |   |   |   |   |   |   |   |   DIABETES >= 1.5 : Yes (13/2)
+|   |   |   |   |   |   |   PNEUMONIA >= 1.5
+|   |   |   |   |   |   |   |   DIABETES < 1.5 : Yes (3/1)
+|   |   |   |   |   |   |   |   DIABETES >= 1.5 : Yes (3/0)
+|   |   |   |   |   |   SEX >= 1.5
+|   |   |   |   |   |   |   TOBACCO < 1.5
+|   |   |   |   |   |   |   |   DIABETES < 1.5 : Yes (4/1)
+|   |   |   |   |   |   |   |   DIABETES >= 1.5 : Yes (5/0)
+|   |   |   |   |   |   |   TOBACCO >= 1.5
+|   |   |   |   |   |   |   |   INMSUPR < 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   |   INMSUPR >= 1.5
+|   |   |   |   |   |   |   |   |   DIABETES < 1.5 : Yes (4/0)
+|   |   |   |   |   |   |   |   |   DIABETES >= 1.5
+|   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR < 1.5 : Yes (3/0)
+|   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   PNEUMONIA < 1.5 : Yes (14/1)
+|   |   |   |   |   |   |   |   |   |   |   PNEUMONIA >= 1.5 : Yes (10/0)
+|   |   |   |   OBESITY >= 1.5
+|   |   |   |   |   COPD < 1.5
+|   |   |   |   |   |   DIABETES < 1.5 : Yes (25/0)
+|   |   |   |   |   |   DIABETES >= 1.5
+|   |   |   |   |   |   |   CARDIOVASCULAR < 1.5 : Yes (4/0)
+|   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5
+|   |   |   |   |   |   |   |   PNEUMONIA < 1.5
+|   |   |   |   |   |   |   |   |   TOBACCO < 1.5 : Yes (6/0)
+|   |   |   |   |   |   |   |   |   TOBACCO >= 1.5
+|   |   |   |   |   |   |   |   |   |   ASTHMA < 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   |   |   |   ASTHMA >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   SEX < 1.5 : No (2/1)
+|   |   |   |   |   |   |   |   |   |   |   SEX >= 1.5 : Yes (10/1)
+|   |   |   |   |   |   |   |   PNEUMONIA >= 1.5 : Yes (9/0)
+|   |   |   |   |   COPD >= 1.5
+|   |   |   |   |   |   ASTHMA < 1.5
+|   |   |   |   |   |   |   SEX < 1.5
+|   |   |   |   |   |   |   |   CARDIOVASCULAR < 1.5 : No (1/0)
+|   |   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   SEX >= 1.5 : No (1/0)
+|   |   |   |   |   |   ASTHMA >= 1.5
+|   |   |   |   |   |   |   DIABETES < 1.5
+|   |   |   |   |   |   |   |   INMSUPR < 1.5 : Yes (5/0)
+|   |   |   |   |   |   |   |   INMSUPR >= 1.5
+|   |   |   |   |   |   |   |   |   SEX < 1.5
+|   |   |   |   |   |   |   |   |   |   PNEUMONIA < 1.5
+|   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR < 1.5 : No (1/0)
+|   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5 : Yes (29/7)
+|   |   |   |   |   |   |   |   |   |   PNEUMONIA >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR < 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5 : Yes (8/3)
+|   |   |   |   |   |   |   |   |   SEX >= 1.5
+|   |   |   |   |   |   |   |   |   |   TOBACCO < 1.5
+|   |   |   |   |   |   |   |   |   |   |   PNEUMONIA < 1.5 : Yes (6/1)
+|   |   |   |   |   |   |   |   |   |   |   PNEUMONIA >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR < 1.5 : No (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5 : Yes (6/1)
+|   |   |   |   |   |   |   |   |   |   TOBACCO >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   PNEUMONIA < 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR < 1.5 : No (2/1)
+|   |   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5 : Yes (57/15)
+|   |   |   |   |   |   |   |   |   |   |   PNEUMONIA >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR < 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5 : Yes (14/2)
+|   |   |   |   |   |   |   DIABETES >= 1.5
+|   |   |   |   |   |   |   |   CARDIOVASCULAR < 1.5
+|   |   |   |   |   |   |   |   |   TOBACCO < 1.5 : Yes (2/0)
+|   |   |   |   |   |   |   |   |   TOBACCO >= 1.5
+|   |   |   |   |   |   |   |   |   |   SEX < 1.5
+|   |   |   |   |   |   |   |   |   |   |   PNEUMONIA < 1.5 : Yes (3/1)
+|   |   |   |   |   |   |   |   |   |   |   PNEUMONIA >= 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   |   |   |   SEX >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   PNEUMONIA < 1.5 : Yes (5.44/0.44)
+|   |   |   |   |   |   |   |   |   |   |   PNEUMONIA >= 1.5 : Yes (2.44/0)
+|   |   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5
+|   |   |   |   |   |   |   |   |   PNEUMONIA < 1.5
+|   |   |   |   |   |   |   |   |   |   SEX < 1.5
+|   |   |   |   |   |   |   |   |   |   |   INMSUPR < 1.5 : Yes (6.88/1.88)
+|   |   |   |   |   |   |   |   |   |   |   INMSUPR >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   TOBACCO < 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   TOBACCO >= 1.5 : Yes (62.31/22.31)
+|   |   |   |   |   |   |   |   |   |   SEX >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   INMSUPR < 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   TOBACCO < 1.5 : No (2/1)
+|   |   |   |   |   |   |   |   |   |   |   |   TOBACCO >= 1.5 : Yes (3/0)
+|   |   |   |   |   |   |   |   |   |   |   INMSUPR >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   TOBACCO < 1.5 : No (8/4)
+|   |   |   |   |   |   |   |   |   |   |   |   TOBACCO >= 1.5 : Yes (120.44/20.44)
+|   |   |   |   |   |   |   |   |   PNEUMONIA >= 1.5
+|   |   |   |   |   |   |   |   |   |   TOBACCO < 1.5
+|   |   |   |   |   |   |   |   |   |   |   INMSUPR < 1.5 : No (1/0)
+|   |   |   |   |   |   |   |   |   |   |   INMSUPR >= 1.5 : Yes (7/0)
+|   |   |   |   |   |   |   |   |   |   TOBACCO >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   SEX < 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   INMSUPR < 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   INMSUPR >= 1.5 : Yes (46.19/9.75)
+|   |   |   |   |   |   |   |   |   |   |   SEX >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   INMSUPR < 1.5 : Yes (3/0)
+|   |   |   |   |   |   |   |   |   |   |   |   INMSUPR >= 1.5 : Yes (59.51/13.07)
+|   |   USMER >= 1.5
+|   |   |   COPD < 1.5
+|   |   |   |   SEX < 1.5
+|   |   |   |   |   AGE < 0.75 : Yes (2/0)
+|   |   |   |   |   AGE >= 0.75
+|   |   |   |   |   |   DIABETES < 1.5
+|   |   |   |   |   |   |   OBESITY < 1.5 : Yes (4/0)
+|   |   |   |   |   |   |   OBESITY >= 1.5
+|   |   |   |   |   |   |   |   INMSUPR < 1.5 : Yes (2/0)
+|   |   |   |   |   |   |   |   INMSUPR >= 1.5 : No (3/1)
+|   |   |   |   |   |   DIABETES >= 1.5 : Yes (5/0)
+|   |   |   |   SEX >= 1.5 : Yes (23/0)
+|   |   |   COPD >= 1.5
+|   |   |   |   DIABETES < 1.5
+|   |   |   |   |   OBESITY < 1.5
+|   |   |   |   |   |   SEX < 1.5
+|   |   |   |   |   |   |   CARDIOVASCULAR < 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5
+|   |   |   |   |   |   |   |   AGE < 0.75
+|   |   |   |   |   |   |   |   |   PNEUMONIA < 1.5 : Yes (5/0)
+|   |   |   |   |   |   |   |   |   PNEUMONIA >= 1.5
+|   |   |   |   |   |   |   |   |   |   TOBACCO < 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   |   |   |   TOBACCO >= 1.5 : Yes (3/1)
+|   |   |   |   |   |   |   |   AGE >= 0.75 : Yes (9/0)
+|   |   |   |   |   |   SEX >= 1.5
+|   |   |   |   |   |   |   TOBACCO < 1.5
+|   |   |   |   |   |   |   |   AGE < 0.75
+|   |   |   |   |   |   |   |   |   PNEUMONIA < 1.5 : No (2/1)
+|   |   |   |   |   |   |   |   |   PNEUMONIA >= 1.5 : No (1/0)
+|   |   |   |   |   |   |   |   AGE >= 0.75 : No (2/1)
+|   |   |   |   |   |   |   TOBACCO >= 1.5
+|   |   |   |   |   |   |   |   ASTHMA < 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   |   ASTHMA >= 1.5
+|   |   |   |   |   |   |   |   |   INMSUPR < 1.5 : No (1/0)
+|   |   |   |   |   |   |   |   |   INMSUPR >= 1.5
+|   |   |   |   |   |   |   |   |   |   AGE < 0.75
+|   |   |   |   |   |   |   |   |   |   |   PNEUMONIA < 1.5 : Yes (9/4)
+|   |   |   |   |   |   |   |   |   |   |   PNEUMONIA >= 1.5 : No (3/1)
+|   |   |   |   |   |   |   |   |   |   AGE >= 0.75
+|   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR < 1.5 : No (2/1)
+|   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   PNEUMONIA < 1.5 : Yes (3/1)
+|   |   |   |   |   |   |   |   |   |   |   |   PNEUMONIA >= 1.5 : Yes (4/1)
+|   |   |   |   |   OBESITY >= 1.5
+|   |   |   |   |   |   INMSUPR < 1.5 : Yes (9/0)
+|   |   |   |   |   |   INMSUPR >= 1.5
+|   |   |   |   |   |   |   AGE < 0.75
+|   |   |   |   |   |   |   |   TOBACCO < 1.5 : Yes (3/0)
+|   |   |   |   |   |   |   |   TOBACCO >= 1.5
+|   |   |   |   |   |   |   |   |   SEX < 1.5
+|   |   |   |   |   |   |   |   |   |   PNEUMONIA < 1.5 : Yes (5/1)
+|   |   |   |   |   |   |   |   |   |   PNEUMONIA >= 1.5 : Yes (9/2)
+|   |   |   |   |   |   |   |   |   SEX >= 1.5
+|   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR < 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   PNEUMONIA < 1.5 : Yes (20.36/7)
+|   |   |   |   |   |   |   |   |   |   |   PNEUMONIA >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   AGE < 0.25 : Yes (1.04/0.04)
+|   |   |   |   |   |   |   |   |   |   |   |   AGE >= 0.25 : Yes (8.32/2.32)
+|   |   |   |   |   |   |   AGE >= 0.75
+|   |   |   |   |   |   |   |   TOBACCO < 1.5 : Yes (9/0)
+|   |   |   |   |   |   |   |   TOBACCO >= 1.5
+|   |   |   |   |   |   |   |   |   PNEUMONIA < 1.5
+|   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR < 1.5 : Yes (5/0)
+|   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   SEX < 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   ASTHMA < 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   ASTHMA >= 1.5 : Yes (15/3)
+|   |   |   |   |   |   |   |   |   |   |   SEX >= 1.5 : Yes (32.64/6)
+|   |   |   |   |   |   |   |   |   PNEUMONIA >= 1.5
+|   |   |   |   |   |   |   |   |   |   SEX < 1.5 : Yes (7/0)
+|   |   |   |   |   |   |   |   |   |   SEX >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR < 1.5 : Yes (2/0)
+|   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5 : Yes (14.64/0.64)
+|   |   |   |   DIABETES >= 1.5
+|   |   |   |   |   AGE < 0.75
+|   |   |   |   |   |   SEX < 1.5
+|   |   |   |   |   |   |   TOBACCO < 1.5 : Yes (3/0)
+|   |   |   |   |   |   |   TOBACCO >= 1.5
+|   |   |   |   |   |   |   |   INMSUPR < 1.5 : Yes (14/0)
+|   |   |   |   |   |   |   |   INMSUPR >= 1.5
+|   |   |   |   |   |   |   |   |   PREGNANT < 1.5 : No (3/0)
+|   |   |   |   |   |   |   |   |   PREGNANT >= 1.5
+|   |   |   |   |   |   |   |   |   |   OBESITY < 1.5
+|   |   |   |   |   |   |   |   |   |   |   PNEUMONIA < 1.5 : Yes (11/2)
+|   |   |   |   |   |   |   |   |   |   |   PNEUMONIA >= 1.5 : Yes (9/2)
+|   |   |   |   |   |   |   |   |   |   OBESITY >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   ASTHMA < 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   |   |   |   |   ASTHMA >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   AGE < 0.25
+|   |   |   |   |   |   |   |   |   |   |   |   |   PNEUMONIA < 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR < 1.5 : Yes (3/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5 : No (2.09/1)
+|   |   |   |   |   |   |   |   |   |   |   |   |   PNEUMONIA >= 1.5 : No (1.09/0)
+|   |   |   |   |   |   |   |   |   |   |   |   AGE >= 0.25
+|   |   |   |   |   |   |   |   |   |   |   |   |   PNEUMONIA < 1.5 : No (39.08/19)
+|   |   |   |   |   |   |   |   |   |   |   |   |   PNEUMONIA >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR < 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5 : No (32.08/14)
+|   |   |   |   |   |   SEX >= 1.5
+|   |   |   |   |   |   |   AGE < 0.25
+|   |   |   |   |   |   |   |   PNEUMONIA < 1.5
+|   |   |   |   |   |   |   |   |   CARDIOVASCULAR < 1.5
+|   |   |   |   |   |   |   |   |   |   INMSUPR < 1.5 : No (1/0)
+|   |   |   |   |   |   |   |   |   |   INMSUPR >= 1.5 : Yes (1.04/0)
+|   |   |   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5
+|   |   |   |   |   |   |   |   |   |   OBESITY < 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   |   |   |   OBESITY >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   INMSUPR < 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   |   |   |   |   INMSUPR >= 1.5 : No (10.09/5.04)
+|   |   |   |   |   |   |   |   PNEUMONIA >= 1.5
+|   |   |   |   |   |   |   |   |   INMSUPR < 1.5 : Yes (0.04/0)
+|   |   |   |   |   |   |   |   |   INMSUPR >= 1.5
+|   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR < 1.5 : Yes (0.04/0)
+|   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   OBESITY < 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   |   |   |   |   OBESITY >= 1.5 : No (5.04/1)
+|   |   |   |   |   |   |   AGE >= 0.25
+|   |   |   |   |   |   |   |   CARDIOVASCULAR < 1.5
+|   |   |   |   |   |   |   |   |   INMSUPR < 1.5 : Yes (0.54/0)
+|   |   |   |   |   |   |   |   |   INMSUPR >= 1.5
+|   |   |   |   |   |   |   |   |   |   OBESITY < 1.5 : No (2/1)
+|   |   |   |   |   |   |   |   |   |   OBESITY >= 1.5 : Yes (6.08/0)
+|   |   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5
+|   |   |   |   |   |   |   |   |   PNEUMONIA < 1.5
+|   |   |   |   |   |   |   |   |   |   ASTHMA < 1.5 : No (1/0)
+|   |   |   |   |   |   |   |   |   |   ASTHMA >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   OBESITY < 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   INMSUPR < 1.5 : No (2/1)
+|   |   |   |   |   |   |   |   |   |   |   |   INMSUPR >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   TOBACCO < 1.5 : No (9/1)
+|   |   |   |   |   |   |   |   |   |   |   |   |   TOBACCO >= 1.5 : Yes (26/4)
+|   |   |   |   |   |   |   |   |   |   |   OBESITY >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   INMSUPR < 1.5 : Yes (5/0)
+|   |   |   |   |   |   |   |   |   |   |   |   INMSUPR >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   TOBACCO < 1.5 : Yes (14/3)
+|   |   |   |   |   |   |   |   |   |   |   |   |   TOBACCO >= 1.5 : Yes (100.08/27.54)
+|   |   |   |   |   |   |   |   |   PNEUMONIA >= 1.5
+|   |   |   |   |   |   |   |   |   |   TOBACCO < 1.5
+|   |   |   |   |   |   |   |   |   |   |   INMSUPR < 1.5 : No (1/0)
+|   |   |   |   |   |   |   |   |   |   |   INMSUPR >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   OBESITY < 1.5 : Yes (3/1)
+|   |   |   |   |   |   |   |   |   |   |   |   OBESITY >= 1.5 : Yes (7/1)
+|   |   |   |   |   |   |   |   |   |   TOBACCO >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   OBESITY < 1.5 : Yes (10/0)
+|   |   |   |   |   |   |   |   |   |   |   OBESITY >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   INMSUPR < 1.5 : Yes (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   INMSUPR >= 1.5 : Yes (56.54/18.54)
+|   |   |   |   |   AGE >= 0.75
+|   |   |   |   |   |   SEX < 1.5
+|   |   |   |   |   |   |   INMSUPR < 1.5 : Yes (7/0)
+|   |   |   |   |   |   |   INMSUPR >= 1.5
+|   |   |   |   |   |   |   |   PNEUMONIA < 1.5
+|   |   |   |   |   |   |   |   |   OBESITY < 1.5
+|   |   |   |   |   |   |   |   |   |   TOBACCO < 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   |   |   |   TOBACCO >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   ASTHMA < 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   |   |   |   |   ASTHMA >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR < 1.5 : No (2/1)
+|   |   |   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5 : Yes (5/0)
+|   |   |   |   |   |   |   |   |   OBESITY >= 1.5
+|   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR < 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   TOBACCO < 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   |   |   |   |   TOBACCO >= 1.5 : Yes (23.83/8.83)
+|   |   |   |   |   |   |   |   PNEUMONIA >= 1.5
+|   |   |   |   |   |   |   |   |   ASTHMA < 1.5
+|   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR < 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5 : No (2/1)
+|   |   |   |   |   |   |   |   |   ASTHMA >= 1.5
+|   |   |   |   |   |   |   |   |   |   TOBACCO < 1.5 : Yes (2/0)
+|   |   |   |   |   |   |   |   |   |   TOBACCO >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   OBESITY < 1.5 : Yes (6/1)
+|   |   |   |   |   |   |   |   |   |   |   OBESITY >= 1.5 : Yes (28.83/5.83)
+|   |   |   |   |   |   SEX >= 1.5
+|   |   |   |   |   |   |   INMSUPR < 1.5
+|   |   |   |   |   |   |   |   PNEUMONIA < 1.5
+|   |   |   |   |   |   |   |   |   OBESITY < 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   |   |   OBESITY >= 1.5
+|   |   |   |   |   |   |   |   |   |   TOBACCO < 1.5 : No (1/0)
+|   |   |   |   |   |   |   |   |   |   TOBACCO >= 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   |   PNEUMONIA >= 1.5 : Yes (2.41/0)
+|   |   |   |   |   |   |   INMSUPR >= 1.5
+|   |   |   |   |   |   |   |   TOBACCO < 1.5
+|   |   |   |   |   |   |   |   |   CARDIOVASCULAR < 1.5 : Yes (2/0)
+|   |   |   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5
+|   |   |   |   |   |   |   |   |   |   PNEUMONIA < 1.5
+|   |   |   |   |   |   |   |   |   |   |   OBESITY < 1.5 : Yes (3/0)
+|   |   |   |   |   |   |   |   |   |   |   OBESITY >= 1.5 : Yes (6/1)
+|   |   |   |   |   |   |   |   |   |   PNEUMONIA >= 1.5 : Yes (8/0)
+|   |   |   |   |   |   |   |   TOBACCO >= 1.5
+|   |   |   |   |   |   |   |   |   CARDIOVASCULAR < 1.5
+|   |   |   |   |   |   |   |   |   |   PNEUMONIA < 1.5
+|   |   |   |   |   |   |   |   |   |   |   OBESITY < 1.5 : Yes (1/0)
+|   |   |   |   |   |   |   |   |   |   |   OBESITY >= 1.5 : Yes (4.41/1)
+|   |   |   |   |   |   |   |   |   |   PNEUMONIA >= 1.5 : Yes (0.41/0)
+|   |   |   |   |   |   |   |   |   CARDIOVASCULAR >= 1.5
+|   |   |   |   |   |   |   |   |   |   PNEUMONIA < 1.5
+|   |   |   |   |   |   |   |   |   |   |   ASTHMA < 1.5 : No (2/1)
+|   |   |   |   |   |   |   |   |   |   |   ASTHMA >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   OBESITY < 1.5 : Yes (9/2)
+|   |   |   |   |   |   |   |   |   |   |   |   OBESITY >= 1.5 : Yes (85.83/11.41)
+|   |   |   |   |   |   |   |   |   |   PNEUMONIA >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   ASTHMA < 1.5 : Yes (2/0)
+|   |   |   |   |   |   |   |   |   |   |   ASTHMA >= 1.5
+|   |   |   |   |   |   |   |   |   |   |   |   OBESITY < 1.5 : Yes (6/1)
+|   |   |   |   |   |   |   |   |   |   |   |   OBESITY >= 1.5 : Yes (55.41/6.41)
+
+Size of the tree : 1417
+
+Time taken to build model: 0.04 seconds
+
+=== Evaluation on training set ===
+
+Time taken to test model on training data: 0.02 seconds
+
+=== Summary ===
+
+Correctly Classified Instances       10059               91.7876 %
+Incorrectly Classified Instances       900                8.2124 %
+Kappa statistic                          0.8021
+Mean absolute error                      0.1151
+Root mean squared error                  0.2396
+Relative absolute error                 28.4337 %
+Root relative squared error             53.2708 %
+Total Number of Instances            10959     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.927    0.104    0.958      0.927    0.942      0.803    0.973     0.989     No
+                 0.896    0.073    0.827      0.896    0.860      0.803    0.973     0.927     Yes
+Weighted Avg.    0.918    0.096    0.921      0.918    0.919      0.803    0.973     0.972     
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 7294  578 |    a = No
+  322 2765 |    b = Yes
+
+
+=== Re-evaluation on test set ===
+
+User supplied test set
+Relation:     covid19-test
+Instances:     unknown (yet). Reading incrementally
+Attributes:   15
+
+=== Summary ===
+
+Correctly Classified Instances        2473               90.2555 %
+Incorrectly Classified Instances       267                9.7445 %
+Kappa statistic                          0.7662
+Mean absolute error                      0.1342
+Root mean squared error                  0.2769
+Total Number of Instances             2740     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.910    0.116    0.953      0.910    0.931      0.769    0.934     0.962     No
+                 0.884    0.090    0.792      0.884    0.835      0.769    0.934     0.810     Yes
+Weighted Avg.    0.903    0.109    0.908      0.903    0.904      0.769    0.934     0.919     
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 1797  178 |    a = No
+   89  676 |    b = Yes
+

@@ -1,0 +1,106 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.DecisionStump 
+Relation:     covid19-train
+Instances:    10959
+Attributes:   15
+              USMER
+              SEX
+              PATIENT_TYPE
+              PNEUMONIA
+              AGE
+              PREGNANT
+              DIABETES
+              COPD
+              ASTHMA
+              INMSUPR
+              HIPERTENSION
+              CARDIOVASCULAR
+              OBESITY
+              TOBACCO
+              DEATH
+Test mode:    evaluate on training data
+
+=== Classifier model (full training set) ===
+
+Decision Stump
+
+Classifications
+
+PATIENT_TYPE <= 1.5 : No
+PATIENT_TYPE > 1.5 : Yes
+PATIENT_TYPE is missing : No
+
+Class distributions
+
+PATIENT_TYPE <= 1.5
+No	Yes	
+0.9733781700994816	0.026621829900518427	
+PATIENT_TYPE > 1.5
+No	Yes	
+0.24201988487702775	0.7579801151229723	
+PATIENT_TYPE is missing
+No	Yes	
+0.718313714754996	0.2816862852450041	
+
+
+Time taken to build model: 0.04 seconds
+
+=== Evaluation on training set ===
+
+Time taken to test model on training data: 0 seconds
+
+=== Summary ===
+
+Correctly Classified Instances        9844               89.8257 %
+Incorrectly Classified Instances      1115               10.1743 %
+Kappa statistic                          0.7655
+Mean absolute error                      0.1617
+Root mean squared error                  0.2843
+Relative absolute error                 39.9577 %
+Root relative squared error             63.2134 %
+Total Number of Instances            10959     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.882    0.062    0.973      0.882    0.926      0.775    0.910     0.943     No
+                 0.938    0.118    0.758      0.938    0.839      0.775    0.910     0.729     Yes
+Weighted Avg.    0.898    0.077    0.913      0.898    0.901      0.775    0.910     0.883     
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 6947  925 |    a = No
+  190 2897 |    b = Yes
+
+
+=== Re-evaluation on test set ===
+
+User supplied test set
+Relation:     covid19-test
+Instances:     unknown (yet). Reading incrementally
+Attributes:   15
+
+=== Summary ===
+
+Correctly Classified Instances        2466               90      %
+Incorrectly Classified Instances       274               10      %
+Kappa statistic                          0.7693
+Mean absolute error                      0.1599
+Root mean squared error                  0.281 
+Total Number of Instances             2740     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.882    0.054    0.977      0.882    0.927      0.780    0.914     0.947     No
+                 0.946    0.118    0.757      0.946    0.841      0.780    0.914     0.731     Yes
+Weighted Avg.    0.900    0.072    0.915      0.900    0.903      0.780    0.914     0.887     
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 1742  233 |    a = No
+   41  724 |    b = Yes
+

@@ -1,0 +1,177 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.bayes.NaiveBayes 
+Relation:     covid19-train
+Instances:    10959
+Attributes:   15
+              USMER
+              SEX
+              PATIENT_TYPE
+              PNEUMONIA
+              AGE
+              PREGNANT
+              DIABETES
+              COPD
+              ASTHMA
+              INMSUPR
+              HIPERTENSION
+              CARDIOVASCULAR
+              OBESITY
+              TOBACCO
+              DEATH
+Test mode:    evaluate on training data
+
+=== Classifier model (full training set) ===
+
+Naive Bayes Classifier
+
+                   Class
+Attribute             No     Yes
+                  (0.72)  (0.28)
+=================================
+USMER
+  mean             1.4901  1.4386
+  std. dev.        0.4999  0.4962
+  weight sum         7872    3087
+  precision             1       1
+
+SEX
+  mean             1.4472  1.6369
+  std. dev.        0.4972  0.4809
+  weight sum         7872    3087
+  precision             1       1
+
+PATIENT_TYPE
+  mean             1.1175  1.9385
+  std. dev.         0.322  0.2403
+  weight sum         7872    3087
+  precision             1       1
+
+PNEUMONIA
+  mean             1.8746  1.3819
+  std. dev.        0.3312  0.4859
+  weight sum         7872    3087
+  precision             1       1
+
+AGE
+  mean              0.567  0.8113
+  std. dev.        0.2307  0.2567
+  weight sum         7825    3077
+  precision           0.5     0.5
+
+PREGNANT
+  mean             1.9925  1.9994
+  std. dev.        0.1667  0.1667
+  weight sum         7872    3087
+  precision             1       1
+
+DIABETES
+  mean             1.8953  1.6045
+  std. dev.        0.3061   0.489
+  weight sum         7872    3087
+  precision             1       1
+
+COPD
+  mean             1.9917  1.9051
+  std. dev.        0.1667  0.2931
+  weight sum         7872    3087
+  precision             1       1
+
+ASTHMA
+  mean             1.9609   1.977
+  std. dev.        0.1939  0.1667
+  weight sum         7872    3087
+  precision             1       1
+
+INMSUPR
+  mean             1.9831  1.9287
+  std. dev.        0.1667  0.2573
+  weight sum         7872    3087
+  precision             1       1
+
+HIPERTENSION
+  mean              1.861  1.5517
+  std. dev.        0.3459  0.4973
+  weight sum         7872    3087
+  precision             1       1
+
+CARDIOVASCULAR
+  mean             1.9794  1.9129
+  std. dev.        0.1667   0.282
+  weight sum         7872    3087
+  precision             1       1
+
+OBESITY
+  mean             1.8535  1.7729
+  std. dev.        0.3536  0.4189
+  weight sum         7872    3087
+  precision             1       1
+
+TOBACCO
+  mean             1.9282  1.8798
+  std. dev.        0.2581  0.3252
+  weight sum         7872    3087
+  precision             1       1
+
+
+
+Time taken to build model: 0.04 seconds
+
+=== Evaluation on training set ===
+
+Time taken to test model on training data: 0.09 seconds
+
+=== Summary ===
+
+Correctly Classified Instances        9775               89.1961 %
+Incorrectly Classified Instances      1184               10.8039 %
+Kappa statistic                          0.7408
+Mean absolute error                      0.1258
+Root mean squared error                  0.2932
+Relative absolute error                 31.086  %
+Root relative squared error             65.1793 %
+Total Number of Instances            10959     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.905    0.143    0.942      0.905    0.923      0.742    0.945     0.979     No
+                 0.857    0.095    0.781      0.857    0.817      0.742    0.945     0.817     Yes
+Weighted Avg.    0.892    0.129    0.896      0.892    0.893      0.742    0.945     0.933     
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 7128  744 |    a = No
+  440 2647 |    b = Yes
+
+
+=== Re-evaluation on test set ===
+
+User supplied test set
+Relation:     covid19-test
+Instances:     unknown (yet). Reading incrementally
+Attributes:   15
+
+=== Summary ===
+
+Correctly Classified Instances        2436               88.9051 %
+Incorrectly Classified Instances       304               11.0949 %
+Kappa statistic                          0.7329
+Mean absolute error                      0.126 
+Root mean squared error                  0.2959
+Total Number of Instances             2740     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.903    0.146    0.941      0.903    0.921      0.735    0.944     0.980     No
+                 0.854    0.097    0.773      0.854    0.811      0.735    0.944     0.801     Yes
+Weighted Avg.    0.889    0.133    0.894      0.889    0.891      0.735    0.944     0.930     
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 1783  192 |    a = No
+  112  653 |    b = Yes
+
